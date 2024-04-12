@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <p class="divider">Case Comment Templates</p>
+      <a href="internal.html">Internal Notes</a>
+      <a href="callNotes.html">Call Notes</a>
+      <a href="reqhelp.html">Request Help</a>
+      <a href="ham.html">Help-A-Moose</a>
+      <a href="handoff.html">Global Handoff</a>
+      <a href="solved.html">Issue Solved</a>
+      <p class="divider">SI Templates</p>
+      <a href="falsePN.html">False +/-</a>
+      <a href="agentFalse.html">Agent F+/-</a>
+      <a href="policyPN.html">Policy F+/-</a>
+      <p class="divider">GraphQL Templates</p>
+      <a href="agent.html">Agent</a>
+      <p class="divider">ScanTemplates</p>
+      <a href="/scantemplate">ScanTemplate Parser (BETA)</a>
+  </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="descriptionSI"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Description</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="osinfo"
+          cols="100"
+          rows="3"
+          required="required"
+	  ></textarea>
+        <span>OS information</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="Policy"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Policy</span>
+      </div>
+	<div class="boxText">
+        <textarea
+          id="Rules"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Rule(s)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="Auth"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Authentication</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="applicable"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>CPE Results</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="systemfingerprint"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>System Fingerprint (1.0)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="vulnfindings"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Vulnerability Finding (scan log)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="def"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>DEF finding</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="tst"
+          cols="100"
+          rows="3"
+          required="required"
+        ></textarea>
+        <span>TST / OBJ finding</span>
+      </div>
+	
+      <div class="boxText">
+        <textarea
+          id="item"
+          cols="100"
+          rows="3"
+          required="required"
+        ></textarea>
+        <span>Item</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="aces"
+          cols="100"
+          rows="3"
+          required="required"
+        ></textarea>
+        <span>ACES</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="disputeProof"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Proof disputing results</span>
+      </div>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+      </div>
+    </div>
+        #output.append("Excluded TCP ports: 
+    <script src="policyfalseScript.js"></script>
+  </body>
+</html>

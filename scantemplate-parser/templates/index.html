@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scantemplate/static/styles.css">
+    <title>Upload Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1d2b3a; /* Very light blue background */
+        }
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #drop-area {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff; /* White background */
+            transition: border-color 0.3s ease-in-out;
+        }
+        #drop-area.highlight {
+            border-color: #009688; /* Highlight color */
+        }
+        #fileInput {
+            display: none;
+        }
+        #file-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #submitBtn {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #009688; /* Submit button color */
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #submitBtn:hover {
+            background-color: #00796b; /* Hover color */
+        }
+        #file-name {
+            maring-top: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <p class="divider">Case Comment Templates</p>
+        <a href="/internal.html">Internal Notes</a>
+        <a href="/callNotes.html">Call Notes</a>
+        <a href="/reqhelp.html">Request Help</a>
+        <a href="/ham.html">Help-A-Moose</a>
+        <a href="/handoff.html">Global Handoff</a>
+        <a href="/solved.html">Issue Solved</a>
+        <p class="divider">SI Templates</p>
+        <a href="/falsePN.html">False +/-</a>
+        <a href="/agentFalse.html">Agent F+/-</a>
+        <p class="divider">GraphQL Templates</p>
+        <a href="/agent.html">Agent</a>
+        <p class="divider">ScanTemplates</p>
+        <a href="/scantemplate">ScanTemplate Parser (BETA)</a>
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰</button>
+      </div>
+    <div id="container">
+        <h1 style="text-align: center; color: #ffffff">Welcome to the Scan Template XML parser!</h1>
+	<br>
+	<form action="/scantemplate/upload" method="post" enctype="multipart/form-data">
+            <div id="drop-area">
+                <div>Drag and drop your file here</div>
+                <div>or</div>
+                <input type="file" id="fileInput" name="file" accept=".xml">
+                <label for="fileInput">Choose File</label>
+            </div>
+            <div id="file-name"></div>
+            <input type="submit" id="submitBtn" value="Submit">
+        </form>
+	<br>
+	<br>
+    <h5 style="text-align: center; color: #ffffff">Please report any errors / enhancements to Slack: <a href="https://rapid7.slack.com/team/U04T4QXEJQ1">Josh Jackson</a></h5>
+</div>
+    <script>
+        const dropArea = document.getElementById('drop-area');
+        const fileNameDisplay = document.getElementById('file-name');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight() {
+            dropArea.classList.add('highlight');
+        }
+
+        function unhighlight() {
+            dropArea.classList.remove('highlight');
+        }
+
+        dropArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const files = e.dataTransfer.files;
+            const fileInput = document.getElementById('fileInput');
+            fileInput.files = files;
+            if (files.length > 0) {
+                displayFileName(files[0].name);
+            }
+        }
+
+        function displayFileName(name) {
+            fileNameDisplay.textContent = `Selected File: ${name}`;
+        }
+
+        fileInput.addEventListener('change', handleFileSelect, false);
+
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                displayFileName(files[0].name);
+            }
+        }
+    </script>
+    <script src="/scantemplate/static/hamScript.js"></script>
+</body>
+</html>

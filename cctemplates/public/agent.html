@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>ccTemplates - Agent</title>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <p class="divider">Case Comment Templates</p>
+      <a href="internal.html">Internal Notes</a>
+      <a href="callNotes.html">Call Notes</a>
+      <a href="reqhelp.html">Request Help</a>
+      <a href="ham.html">Help-A-Moose</a>
+      <a href="handoff.html">Global Handoff</a>
+      <a href="solved.html">Issue Solved</a>
+      <p class="divider">SI Templates</p>
+      <a href="falsePN.html">False +/-</a>
+      <a href="agentFalse.html">Agent F+/-</a>
+     <a href="policyPN.html">Policy F+/-</a>
+      <p class="divider">GraphQL Templates</p>
+      <a href="agent.html">Agent</a>
+      <p class="divider">ScanTemplates</p>
+      <a href="/scantemplate">ScanTemplate Parser (BETA)</a>
+  </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="orgID"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Org ID</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="agentID"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Agent ID</span>
+      </div>
+    </div>
+
+    <div class="buttonBody">
+        <section class="agentSection">
+    <div class="tooltip">
+        <button onclick="agentStatus()" onmouseout="outFunc()" class="agentbutton">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Agent Status
+        </button>
+      </div>
+      <div class="tooltip">
+        <button onclick="agentAssessment()" onmouseout="outFunc()" class="agentbutton">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Agent Assessment
+        </button>
+      </div>
+      <div class="tooltip">
+        <button onclick="agentLogs()" onmouseout="outFunc()" class="agentbutton">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Agent Logs
+        </button>
+      </div>
+      <div class="tooltip">
+        <button onclick="agentCollection()" onmouseout="outFunc()" class="agentbutton">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Collection Jobs
+        </button>
+      </div>
+    </section>
+    </div>
+    
+
+    <script src="agentScript.js"></script>
+  </body>
+</html>

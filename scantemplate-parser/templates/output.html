@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsed XML Output</title>
+    <style>
+        body {
+            background-color: #1d2b3a; /* Very dark blue background */
+        }
+        .output-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White box background */
+            border: 2px solid #cccccc; /* Gray border */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff; /*  white text color */
+        }
+        pre {
+            white-space: pre-wrap; /* Wrap long lines */
+            word-wrap: break-word;
+        }
+        a:link, a:visited {
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+a:hover, a:active {
+  background-color: #00796b;
+}
+    </style>
+</head>
+<body>
+    <a href="/scantemplate" id="go-back-btn">Go back to main page</a>
+    <br>
+    </div>
+    <div class="output-container">
+        <h1>Parsed XML Output</h1>
+        <div class="output-box">
+            <pre>{{ upload_result }}</pre>
+        </div>
+    </div>
+</body>
+</html>

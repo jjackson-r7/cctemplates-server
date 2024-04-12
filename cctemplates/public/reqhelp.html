@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <p class="divider">Case Comment Templates</p>
+      <a href="internal.html">Internal Notes</a>
+      <a href="callNotes.html">Call Notes</a>
+      <a href="reqhelp.html">Request Help</a>
+      <a href="ham.html">Help-A-Moose</a>
+      <a href="handoff.html">Global Handoff</a>
+      <a href="solved.html">Issue Solved</a>
+      <p class="divider">SI Templates</p>
+      <a href="falsePN.html">False +/-</a>
+      <a href="agentFalse.html">Agent F+/-</a>
+      <a href="policyPN.html">Policy F+/-</a>
+      <p class="divider">GraphQL Templates</p>
+      <a href="agent.html">Agent</a>
+        <p class="divider">ScanTemplates</p>
+        <a href="/scantemplate">ScanTemplate Parser (BETA)</a>
+    </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="issueSummary"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Summary of Issue</span>
+        <br />
+      </div>
+      <div class="boxText">
+        <textarea
+          id="stuckOn"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>What are you stuck on?</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="specificHelp"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Is there anything in particular you need help on?</span>
+      </div>
+      <div class="boxText">
+        <!-- <label for="logsloc">Logs location:</label> -->
+        <input type="text" id="logsloc" name="logslog" required="required" />
+        <span>Logs location:</span>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+      </div>
+    </div>
+    <script src="reqScript.js"></script>
+  </body>
+</html>
