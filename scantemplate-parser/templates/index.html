@@ -89,6 +89,10 @@
     <div id="container">
         <h1 style="text-align: center; color: #ffffff">Welcome to the Scan Template XML parser!</h1>
 	<br>
+    {% if error %}
+        <div style="text-align: center; color: red;">{{ error }}</div>
+    <br>
+    {% end if %}
 	<form action="/scantemplate/upload" method="post" enctype="multipart/form-data">
             <div id="drop-area">
                 <div>Drag and drop your file here</div>
