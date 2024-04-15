@@ -61,6 +61,11 @@
     </style>
 </head>
 <body>
+    <div id="container">
+        {% if error_message %}
+            <div style="color: red;">{{ error_message }}</div>
+        {% endif %}
+    </div>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <p class="divider">Case Comment Templates</p>

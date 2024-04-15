@@ -31,7 +31,8 @@ def upload():
         case_number = request.form.get('case_number')
 
         if not uploaded_file or not case_number:
-            return "Please upload a file and provide a case number."
+            error_message = "Please upload a file and provide a case number."
+            return render_template("index.html", error_message=error_message)
 
         try:
             # Save the uploaded file to disk
@@ -84,9 +85,9 @@ def upload():
 
             return render_template("output.html", upload_result=combined_result)
         except Exception as e:
-                return f"Error processing the uploaded file: {str(e)}"
-        else:
-            return "Please upload a file and provide a case number."
+                error_message = f"Error processing the uploaded file: {str(e)}"
+                return render_template("index.html", error_message=error_message)
+
     else:
         # If the route is accessed with a GET request (i.e., page refresh), redirect to /scantemplate
         return redirect(url_for('index'))
