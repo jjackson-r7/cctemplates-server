@@ -99,7 +99,8 @@ def redirect_to_scantemplate():
 
 @app.route('/scantemplate')
 def index():
-    return render_template("index.html")
+    error_message = request.args.get('error')
+    return render_template("index.html", error=error_message)
 
 
 if __name__ == "__main__":
