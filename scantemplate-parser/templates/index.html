@@ -86,14 +86,14 @@
     <div id="main">
         <button class="openbtn" onclick="openNav()">☰</button>
       </div>
-    <div id="container">
+      <div id="container">
         <h1 style="text-align: center; color: #ffffff">Welcome to the Scan Template XML parser!</h1>
-	<br>
-    {% if error %}
+        <br>
+        {% if error %}
         <div style="text-align: center; color: red;">{{ error }}</div>
-    <br>
-    {% end if %}
-	<form action="/scantemplate/upload" method="post" enctype="multipart/form-data">
+        <br>
+        {% endif %}
+        <form action="/scantemplate/upload" method="post" enctype="multipart/form-data">
             <div id="drop-area">
                 <div>Drag and drop your file here</div>
                 <div>or</div>
@@ -107,8 +107,7 @@
             <div id="file-name"></div>
             <input type="submit" id="submitBtn" value="Submit">
         </form>
-	<br>
-	<br>
+        <br>
     <h5 style="text-align: center; color: #ffffff">Please report any errors / enhancements to Slack: <a href="https://rapid7.slack.com/team/U04T4QXEJQ1">Josh Jackson</a></h5>
 </div>
     <script>
