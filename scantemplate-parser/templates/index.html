@@ -145,6 +145,14 @@
         function displayFileName(name) {
             fileNameDisplay.textContent = `Selected File: ${name}`;
         }
+        function validateForm() {
+            var caseNumber = document.getElementById("case-number").value;
+            if (caseNumber === "") {
+                alert("Please enter a case number.");
+                return false;
+            }
+            return true;
+        }
 
         fileInput.addEventListener('change', handleFileSelect, false);
 
