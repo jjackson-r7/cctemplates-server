@@ -28,7 +28,7 @@ create_upload_directory()
 def upload():
     uploaded_file = request.files.get('file')  # Handle None if no file uploaded
     case_number = request.form.get('case_number')
-    error_message = None # initialize error message
+    error_message = None  # initialize error message
 
     if request.method == "POST":  # Check if form was submitted
         if not uploaded_file:
@@ -63,30 +63,30 @@ def upload():
                 as_400_output = as_400_policy(file_path)
                 unix_output = unix_policy(file_path)
 
-            # Generate log message
-            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            log_message = f"Timestamp: {timestamp}, Case Number: {case_number}\n"
+                # Generate log message
+                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                log_message = f"Timestamp: {timestamp}, Case Number: {case_number}\n"
 
-            # Save log to file
-            log_file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'log.txt')
-            with open(log_file_path, 'a') as log_file:
-                log_file.write(log_message)
-                
-            # Combine results
-            combined_result = '\n\n'.join([
-                general_output, asset_output, service_output, discovery_output,
-                vulnerability_output, scan_assistant_output, file_search_output,
-                spam_relay_output, database_output, mail_output, cvs_output,
-                dhcp_output, telnet_output, policy_output, oracle_output,
-                lotus_output, windowsg_output, cif_smb_output, as_400_output,
-                unix_output
-            ])
+                # Save log to file
+                log_file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'log.txt')
+                with open(log_file_path, 'a') as log_file:
+                    log_file.write(log_message)
 
-            # Remove uploaded file
-            os.remove(file_path)
+                # Combine results
+                combined_result = '\n\n'.join([
+                    general_output, asset_output, service_output, discovery_output,
+                    vulnerability_output, scan_assistant_output, file_search_output,
+                    spam_relay_output, database_output, mail_output, cvs_output,
+                    dhcp_output, telnet_output, policy_output, oracle_output,
+                    lotus_output, windowsg_output, cif_smb_output, as_400_output,
+                    unix_output
+                ])
 
-            return render_template("output.html", upload_result=combined_result)
-        except Exception as e:
+                # Remove uploaded file
+                os.remove(file_path)
+
+                return render_template("output.html", upload_result=combined_result)
+            except Exception as e:
                 error_message = f"Error processing the uploaded file: {str(e)}"
 
     return render_template("index.html", error=error_message)
