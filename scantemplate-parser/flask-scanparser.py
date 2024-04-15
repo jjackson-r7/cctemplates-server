@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 import os
+import datetime
+
 from process import (
     process_general_section, asset_discovery, service_discovery,
     discovery_performance, vulnerability_checks, scan_assistant,
@@ -26,6 +28,8 @@ create_upload_directory()
 def upload():
     if request.method == "POST":
         uploaded_file = request.files.get('file')  # Handle None if no file uploaded
+        case_number = request.form.get('case_number')
+
         if uploaded_file:
             try:
                 # Save the uploaded file to disk
@@ -54,6 +58,15 @@ def upload():
                 as_400_output = as_400_policy(file_path)
                 unix_output = unix_policy(file_path)
 
+                 # Generate log message
+                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                log_message = f"Timestamp: {timestamp}, Case Number: {case_number}\n"
+
+                # Save log to file
+                log_file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'log.txt')
+                with open(log_file_path, 'a') as log_file:
+                    log_file.write(log_message)
+                    
                 # Combine results
                 combined_result = '\n\n'.join([
                     general_output, asset_output, service_output, discovery_output,
@@ -71,7 +84,7 @@ def upload():
             except Exception as e:
                 return f"Error processing the uploaded file: {str(e)}"
         else:
-            return redirect(url_for('index'))  # Redirect to index if no file uploaded
+            return "Please upload a file and provide a case number."
     else:
         # If the route is accessed with a GET request (i.e., page refresh), redirect to /scantemplate
         return redirect(url_for('index'))
