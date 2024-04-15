@@ -26,14 +26,14 @@ create_upload_directory()
 
 @app.route('/scantemplate/upload', methods=["GET", "POST"])
 def upload():
-    if request.method == "POST":
-        uploaded_file = request.files.get('file')  # Handle None if no file uploaded
-        case_number = request.form.get('case_number')
+    uploaded_file = request.files.get('file')  # Handle None if no file uploaded
+    case_number = request.form.get('case_number')
 
-        if not uploaded_file or not case_number:
-            error_message = "Please upload a file and provide a case number."
-            return render_template("index.html", error_message=error_message)
-
+    if not uploaded_file:
+        error_message = "No file uploaded"
+    elif not case_number:
+        error_message = "Case number is required"
+    else:
         try:
             # Save the uploaded file to disk
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
@@ -86,21 +86,13 @@ def upload():
             return render_template("output.html", upload_result=combined_result)
         except Exception as e:
                 error_message = f"Error processing the uploaded file: {str(e)}"
-                return render_template("index.html", error_message=error_message)
 
-    else:
-        # If the route is accessed with a GET request (i.e., page refresh), redirect to /scantemplate
-        return redirect(url_for('index'))
+    return render_template("index.html", error=error_message)
 
 @app.route('/scantemplate/')
-def redirect_to_scantemplate():
-    # Redirect /scantemplate/ to /scantemplate
-    return redirect(url_for('index'))
-
 @app.route('/scantemplate')
 def index():
-    error_message = request.args.get('error')
-    return render_template("index.html", error=error_message)
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
