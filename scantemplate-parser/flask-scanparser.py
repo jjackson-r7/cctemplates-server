@@ -24,7 +24,7 @@ def create_upload_directory():
 create_upload_directory()
 
 
-@app.route('/scantemplate', methods=["GET", "POST"])
+@app.route('/scantemplate/upload', methods=["GET", "POST"])
 def upload():
     if request.method == "POST":
         uploaded_file = request.files.get('file')  # Handle None if no file uploaded
