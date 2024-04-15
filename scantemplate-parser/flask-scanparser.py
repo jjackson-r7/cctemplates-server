@@ -28,38 +28,40 @@ create_upload_directory()
 def upload():
     uploaded_file = request.files.get('file')  # Handle None if no file uploaded
     case_number = request.form.get('case_number')
+    error_message = None # initialize error message
 
-    if not uploaded_file:
-        error_message = "No file uploaded"
-    elif not case_number:
-        error_message = "Case number is required"
-    else:
-        try:
-            # Save the uploaded file to disk
-            file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
-            uploaded_file.save(file_path)
+    if request.method == "POST":  # Check if form was submitted
+        if not uploaded_file:
+            error_message = "No file uploaded"
+        elif not case_number:
+            error_message = "Case number is required"
+        else:
+            try:
+                # Save the uploaded file to disk
+                file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
+                uploaded_file.save(file_path)
 
-            # Process uploaded file
-            general_output = process_general_section(file_path)
-            asset_output = asset_discovery(file_path)
-            service_output = service_discovery(file_path)
-            discovery_output = discovery_performance(file_path)
-            vulnerability_output = vulnerability_checks(file_path)
-            scan_assistant_output = scan_assistant(file_path)
-            file_search_output = file_search(file_path)
-            spam_relay_output = spam_relay(file_path)
-            database_output = database(file_path)
-            mail_output = mail_servers(file_path)
-            cvs_output = cvs_servers(file_path)
-            dhcp_output = dhcp_servers(file_path)
-            telnet_output = telnet_servers(file_path)
-            policy_output = policy_manager(file_path)
-            oracle_output = oracle_policy(file_path)
-            lotus_output = lotus(file_path)
-            windowsg_output = windows_group(file_path)
-            cif_smb_output = cif_smb_account(file_path)
-            as_400_output = as_400_policy(file_path)
-            unix_output = unix_policy(file_path)
+                # Process uploaded file
+                general_output = process_general_section(file_path)
+                asset_output = asset_discovery(file_path)
+                service_output = service_discovery(file_path)
+                discovery_output = discovery_performance(file_path)
+                vulnerability_output = vulnerability_checks(file_path)
+                scan_assistant_output = scan_assistant(file_path)
+                file_search_output = file_search(file_path)
+                spam_relay_output = spam_relay(file_path)
+                database_output = database(file_path)
+                mail_output = mail_servers(file_path)
+                cvs_output = cvs_servers(file_path)
+                dhcp_output = dhcp_servers(file_path)
+                telnet_output = telnet_servers(file_path)
+                policy_output = policy_manager(file_path)
+                oracle_output = oracle_policy(file_path)
+                lotus_output = lotus(file_path)
+                windowsg_output = windows_group(file_path)
+                cif_smb_output = cif_smb_account(file_path)
+                as_400_output = as_400_policy(file_path)
+                unix_output = unix_policy(file_path)
 
             # Generate log message
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
