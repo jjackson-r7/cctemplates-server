@@ -95,6 +95,7 @@ ${disputeProof}
 `;
 
   falsePositiveNegative = `${hmtldescription}
+${htmldisputeProof}
 ${htmlos}
 ${htmlpolicyinfo}
 ${htmlruleinfo}
@@ -105,8 +106,7 @@ ${htmlvuln}
 ${htmldef}
 ${htmltst}
 ${htmlitem}
-${htmlaces}
-${htmldisputeProof}`;
+${htmlaces}`;
 
   navigator.clipboard.writeText(falsePositiveNegative);
 

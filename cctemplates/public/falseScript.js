@@ -34,6 +34,7 @@ function myFunction() {
   const htmlDisputeProof = `**Proof of why it should be NON-VULNERABLE/VULNERABLE:**\n\`\`\`\n${disputeProof.value}\n\`\`\`\n`;
 
   falsePositiveNegative = `${hmtldescription}
+  ${htmlDisputeProof}
   ${htmlengine}
   ${htmlAsset}
   ${htmlInitAuth}
@@ -41,8 +42,7 @@ function myFunction() {
   ${htmlSystemF}
   ${htmlVulnF}
   ${htmlXmlReport}
-  ${htmlFarnsworth}
-  ${htmlDisputeProof}`;
+  ${htmlFarnsworth}`;
 
   navigator.clipboard.writeText(falsePositiveNegative);
 
