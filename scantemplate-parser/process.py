@@ -18,11 +18,13 @@ def process_general_section(file_path):
         # Extracting information from the XML
         
         # Name and Description
-        output.append(f"ScanTemplate Name: {root.attrib.get('id', 'N/A')}")
+        scantemplate_name = root.attrib.get('id', 'N/A')
+        output.append(f"ScanTemplate Name: {scantemplate_name}")
         
         # Template Description
         for title in root.findall('.//templateDescription'):
-            output.append(f"Template description: {title.attrib.get('title', 'N/A')} {title.text.strip()}")
+            template_description = title.attrib.get('title', 'N/A')
+            output.append(f"Template description: {template_description} {title.text.strip()}")
         
         # General Information
         for general in root.findall('.//General'):
@@ -58,7 +60,7 @@ def process_general_section(file_path):
             webspider = 'NA'
             for spider in root.findall('.//General'):
                 webspider = spider.attrib.get('disableWebSpider', "N/A")
-            output.append(f"WebSpider: {'enabled' if vuln_scan == '0' else 'disabled'}")
+            output.append(f"WebSpider: {'enabled' if webspider == '0' else 'disabled'}")
 
            #Fingerprinting
             fingerprinting = 'NA'
