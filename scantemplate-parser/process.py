@@ -41,20 +41,20 @@ def process_general_section(file_path):
             #Policy Scan
             policy_scan = 'NA'
             for policys in root.findall('.//General'):
-                vuln_scan = vulns.attrib.get('disablePolicyScan', "N/A")
-            output.append(f"Policy Scan: {'enabled' if vuln_scan == '0' else 'disabled'}")
+                policy_scan = vulns.attrib.get('disablePolicyScan', "N/A")
+            output.append(f"Policy Scan: {'enabled' if policy_scan == '0' else 'disabled'}")
 
            #invulnerable Storage
             invuln_storage = 'NA'
             for vulnst in root.findall('.//General'):
                 invuln_storage = vulnst.attrib.get('invulnerableStorage', "N/A")
-            output.append(f"Invulnerable Storage: {'enabled' if vuln_scan == 'on' else 'disabled'}")
+            output.append(f"Invulnerable Storage: {'enabled' if invuln_storage == 'on' else 'disabled'}")
 
            #auto disc / use credentials
-            vuln_scan = 'NA'
+            cred_scan = 'NA'
             for creds in root.findall('.//General'):
                 cred_scan = creds.attrib.get('enableAuthDisc', "N/A")
-            output.append(f"Use Credentials: {'enabled' if vuln_scan == '1' else 'disabled'}")
+            output.append(f"Use Credentials: {'enabled' if cred_scan == '1' else 'disabled'}")
 
            #Webspider
             webspider = 'NA'
@@ -66,13 +66,13 @@ def process_general_section(file_path):
             fingerprinting = 'NA'
             for fing in root.findall('.//General'):
                 fingerprinting = fing.attrib.get('enableFingerprinting', "N/A")
-            output.append(f"Fingerprinting: {'enabled' if vuln_scan == '1' else 'disabled'}")
+            output.append(f"Fingerprinting: {'enabled' if fingerprinting == '1' else 'disabled'}")
 
            #Windows Path Resolver
             winpath = 'NA'
             for win in root.findall('.//General'):
                 winpath = win.attrib.get('enableWindowsPathResolver', "N/A")
-            output.append(f"Windows FileSystem Search / Windows Path Resolver: {'enabled' if vuln_scan == '1' else 'disabled'}")
+            output.append(f"Windows FileSystem Search / Windows Path Resolver: {'enabled' if winpath == '1' else 'disabled'}")
 
            #Enhanced Logging
             enhanced_logging = 'N/A'
