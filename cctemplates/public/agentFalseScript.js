@@ -21,7 +21,44 @@ function myFunction() {
   const disputeProof = document.getElementById("disputeProof");
   const htmlDisputeProof = `**Proof of why it should be NON-VULNERABLE/VULNERABLE:**\n\`\`\`\n${disputeProof.value}\n\`\`\`\n`;
 
-  agentFalse = `${htmlOrgID}\n${htmlAgentID}\n${htmlRegion}\n${htmlXmlReport}\n${htmlFarnsworth}\n${htmlDisputeProof}`;
+
+  const agentlogchk = document.getElementById("agentlogchk");
+  let htmlagentlogchk = "";
+  
+  if (agentlogchk.checked) {
+    htmlagentlogchk = "**Agent Logs are attached to the case**";
+  } else {
+    htmlagentlogchk = "**Agent Logs are not attached to the case**";
+  }
+
+  const xmlreportchk = document.getElementById("xmlreportchk");
+  let htmlxmlreportchk = "";
+  
+  if (xmlreportchk.checked) {
+    htmlxmlreportchk = "**XML Report is attached to the case**";
+  } else {
+    htmlxmlreportchk = "**XML Report is not attached to the case**";
+  }
+
+  const proofchk = document.getElementById("proofchk");
+  let htmlproofchk = "";
+  
+  if (proofchk.checked) {
+    htmlproofchk = "**Screenshot / Proof is attached to the case**";
+  } else {
+    htmlproofchk = "**Screenshot / Proof is not attached to the case**";
+  }
+
+
+  agentFalse = `${htmlOrgID}\n
+  ${htmlAgentID}\n
+  ${htmlRegion}\n
+  ${htmlXmlReport}\n
+  ${htmlFarnsworth}\n
+  ${htmlDisputeProof}
+  ${htmlagentlogchk}
+  ${htmlxmlreportchk}
+  ${htmlproofchk}`;
 
   navigator.clipboard.writeText(agentFalse).then(() => {
     var tooltip = document.getElementById("myTooltip");
