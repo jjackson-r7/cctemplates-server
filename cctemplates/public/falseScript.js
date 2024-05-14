@@ -44,7 +44,7 @@ function myFunction() {
   if (scanlogchk.checked) {
     htmlscanlogchk = "**Scan Logs with enhanced logging is attached to the case**";
   } else {
-    htmlscanlogchk = "Scan Log with enhanced logging is not attached to the case";
+    htmlscanlogchk = "**Scan Log with enhanced logging is not attached to the case**";
   }
 
   const xmlreportchk = document.getElementById("xmlreportchk");
@@ -53,16 +53,16 @@ function myFunction() {
   if (xmlreportchk.checked) {
     htmlxmlreportchk = "**XML Report is attached to the case**";
   } else {
-    htmlxmlreportchk = "XML Report is not attached to the case";
+    htmlxmlreportchk = "**XML Report is not attached to the case**";
   }
 
-  const xmlproofchk = document.getElementById("proofchk");
+  const proofchk = document.getElementById("proofchk");
   let htmlproofchk = "";
   
   if (proofchk.checked) {
     htmlproofchk = "**Screenshot / Proof is attached to the case**";
   } else {
-    htmlproofchk = "Screenshot / Proof is not attached to the case";
+    htmlproofchk = "**Screenshot / Proof is not attached to the case**";
   }
 
   falsePositiveNegative = `${hmtlsummary}
