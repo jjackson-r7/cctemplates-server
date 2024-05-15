@@ -25,6 +25,7 @@
         ></textarea>
         <span>Org ID</span>
       </div>
+
       <div class="boxText">
         <textarea
           id="agentID"
@@ -47,22 +48,12 @@
 
       <div class="boxText">
         <textarea
-          id="xmlreport"
+          id="summary"
           cols="100"
-          rows="5"
+          rows="10"
           required="required"
         ></textarea>
-        <span>Agent Assessment or XML Report Proof</span>
-      </div>
-
-      <div class="boxText">
-        <textarea
-          id="farnsworth"
-          cols="100"
-          rows="3"
-          required="required"
-        ></textarea>
-        <span>Farnsworth</span>
+        <span>Summary</span>
       </div>
 
       <div class="boxText">
@@ -75,13 +66,35 @@
         <span>Proof Disputing Finding</span>
       </div>
 
+      <div class="boxText">
+        <textarea
+          id="xmlreport"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Vulnerability Results (Agent Assessment or XML Report Proof)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="farnsworth"
+          cols="100"
+          rows="3"
+          required="required"
+        ></textarea>
+        <span>Farnsworth</span>
+      </div>
+
+
+
       <!-- Checkboxes container -->
       <div class="mainBody">
         <h4 >Required Attachments</h4>
         </div>
         <div class="checkbox-container">
           <input type="checkbox" id="agentlogchk">
-          <label for="checkbox1">Agent Assessment Logs</label>
+          <label for="checkbox1">Agent Logs</label>
         
           <input type="checkbox" id="xmlreportchk">
           <label for="checkbox2"> XML Report Attached</label>

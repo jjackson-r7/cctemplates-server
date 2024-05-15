@@ -12,16 +12,18 @@ function myFunction() {
   const region = document.getElementById("region");
   const htmlRegion = `**Region:**\n\`\`\`\n${region.value}\n\`\`\`\n`;
 
+  const summary = document.getElementById("summary");
+  const htmlsummary = `**Summary:**\n\`\`\`\n${summary.value}\n\`\`\`\n`;
+
+  const disputeProof = document.getElementById("disputeProof");
+  const htmlDisputeProof = `**Proof of why it should be NON-VULNERABLE/VULNERABLE:**\n\`\`\`\n${disputeProof.value}\n\`\`\`\n`;
+
   const xmlreport = document.getElementById("xmlreport");
   const htmlXmlReport = `**Agent Assessment or XML Report Proof:**\n\`\`\`\n${xmlreport.value}\n\`\`\`\n`;
 
   const farnsworth = document.getElementById("farnsworth");
   const htmlFarnsworth = `**Farnsworth:**\n\`\`\`\n${farnsworth.value}\n\`\`\`\n`;
   
-  const disputeProof = document.getElementById("disputeProof");
-  const htmlDisputeProof = `**Proof of why it should be NON-VULNERABLE/VULNERABLE:**\n\`\`\`\n${disputeProof.value}\n\`\`\`\n`;
-
-
   const agentlogchk = document.getElementById("agentlogchk");
   let htmlagentlogchk = "";
   
@@ -53,11 +55,12 @@ function myFunction() {
   agentFalse = `${htmlOrgID}\n
   ${htmlAgentID}\n
   ${htmlRegion}\n
+  ${htmlsummary}\n
+  ${htmlDisputeProof}\n
   ${htmlXmlReport}\n
   ${htmlFarnsworth}\n
-  ${htmlDisputeProof}
-  ${htmlagentlogchk}
-  ${htmlxmlreportchk}
+  ${htmlagentlogchk}\n
+  ${htmlxmlreportchk}\n
   ${htmlproofchk}`;
 
   navigator.clipboard.writeText(agentFalse).then(() => {
