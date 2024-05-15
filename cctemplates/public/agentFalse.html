@@ -6,27 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="otherStyles.css" rel="stylesheet" />
     <title>ccTemplates - Agent False +/-</title>
+    <script src="nav.js"></script>
   </head>
   <body>
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <p class="divider">Case Comment Templates</p>
-        <a href="internal.html">Internal Notes</a>
-        <a href="callNotes.html">Call Notes</a>
-        <a href="reqhelp.html">Request Help</a>
-        <a href="ham.html">Help-A-Moose</a>
-        <a href="handoff.html">Global Handoff</a>
-        <a href="solved.html">Issue Solved</a>
-        <p class="divider">SI Templates</p>
-        <a href="falsePN.html">False +/-</a>
-        <a href="agentFalse.html">Agent F+/-</a>
-        <a href="policyPN.html">Policy F+/-</a>
-	<p class="divider">GraphQL Templates</p>
-        <a href="agent.html">Agent</a>
-        <p class="divider">ScanTemplates</p>
-        <a href="/scantemplate">ScanTemplate Parser (BETA)</a>
-    </div>
-    <div id="main">
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
       <button class="openbtn" onclick="openNav()">☰</button>
     </div>
     <div class="mainBody">
@@ -39,6 +25,7 @@
         ></textarea>
         <span>Org ID</span>
       </div>
+
       <div class="boxText">
         <textarea
           id="agentID"
@@ -61,12 +48,32 @@
 
       <div class="boxText">
         <textarea
+          id="summary"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Summary</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="disputeProof"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Proof Disputing Finding</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
           id="xmlreport"
           cols="100"
           rows="5"
           required="required"
         ></textarea>
-        <span>Agent Assessment or XML Report Proof</span>
+        <span>Vulnerability Results (Agent Assessment or XML Report Proof)</span>
       </div>
 
       <div class="boxText">
@@ -79,15 +86,22 @@
         <span>Farnsworth</span>
       </div>
 
-      <div class="boxText">
-        <textarea
-          id="disputeProof"
-          cols="100"
-          rows="10"
-          required="required"
-        ></textarea>
-        <span>Proof Disputing Finding</span>
-      </div>
+
+
+      <!-- Checkboxes container -->
+      <div class="mainBody">
+        <h4 >Required Attachments</h4>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="agentlogchk">
+          <label for="checkbox1">Agent Logs</label>
+        
+          <input type="checkbox" id="xmlreportchk">
+          <label for="checkbox2"> XML Report Attached</label>
+        
+          <input type="checkbox" id="proofchk">
+          <label for="checkbox3">Screenshot or Proof of F+/-</label>
+        </div>
 
       <div class="tooltip">
         <button onclick="myFunction()" onmouseout="outFunc()" class="button">
