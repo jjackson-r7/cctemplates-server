@@ -138,13 +138,14 @@ def asset_discovery(file_path):
             else:
                 output.append("Send TCP packets to ports: Unknown")
 
-            TCP_ports = ', '.join(TCPport.text for TCPport in TCPchk.findall("portList/port"))
+            TCP_ports = root.find(".//CheckHosts/TCPHostCheck/portList")
             # Check if TCP_ports is empty
-            if not TCP_ports:
-                output.append("The Following TCP ports are added to the inclusion list: No ports added.")
+            if TCP_ports is not None and TCP_ports.text:
+                TCP_ports_text = TCP_ports.text
             else:
-                output.append(f"The following TCP ports are added to the inclusion list: {TCP_ports}")
-        
+                TCP_ports_text = "None"
+            output.append("The Following TCP ports are added to the inclusion list:" + TCP_ports_text)
+
         # UDP packets to ports
         for UDPchk in root.findall('.//CheckHosts/UDPHostCheck'):
             UDPCHECK = UDPchk.attrib.get('enabled')
@@ -153,12 +154,14 @@ def asset_discovery(file_path):
             else:
                 output.append("Send UDP packets to ports: Unknown")
 
-            UDP_ports = ', '.join(UDPport.text for UDPport in UDPchk.findall("portList/port"))
+            UDP_ports = root.find(".//CheckHosts/UDPHostCheck/portList")
             # Check if TCP_ports is empty
-            if not UDP_ports:
-                output.append("The Following UDP ports are added to the inclusion list: No ports added.")
+            if UDP_ports is not None and UDP_ports.text:
+                UDP_ports_text = udp_ports.text
             else:
-                output.append(f"The following UDP ports are added to the inclusion list: {UDP_ports}")
+                UDP_ports_text = "None"
+            output.append("The Following UDP ports are added to the inclusion list:" + UDP_ports_text)
+
         # TCP reset
         for tcprst in root.findall('.//CheckHosts/ignoreTCPReset'):
             TCPRESET = tcprst.attrib.get('enabled')
