@@ -256,22 +256,15 @@ def service_discovery(file_path):
             
             portstoscan = tcp_port_scan.attrib.get('method', 'Unknown')
             output.append("TCP Scanning Method - <FULL | SYN | SYN+RST | SYN+FIN | SYN+ECE > : " + portstoscan)
-            
         else:
             output.append("TCP Scanning Method: none")
 
         tcp_port_scanlist = root.find(".//ServiceDiscovery/TCPPortScan/portList")
-        if tcp_port_scanlist is not None and tcp_port_scanlist.text:
-            tcp_port_scanlist_text = tcp_port_scanlist.text
-        else:
-            tcp_port_scanlist_text = "None"
+        tcp_port_scanlist_text = tcp_port_scanlist.text if tcp_port_scanlist is not None and tcp_port_scanlist.text else "None"
         output.append("Additional TCP Ports: " + tcp_port_scanlist_text)
        
         excl_tcp_port_scanlist = root.find(".//ServiceDiscovery/ExcludedTCPPortScan/portList")
-        if excl_tcp_port_scanlist is not None and excl_tcp_port_scanlist.text:
-            excl_tcp_port_scanlist_text = excl_tcp_port_scanlist.text
-        else:
-            excl_tcp_port_scanlist_text = "None"
+        excl_tcp_port_scanlist_text = excl_tcp_port_scanlist.text if excl_tcp_port_scanlist is not None and excl_tcp_port_scanlist.text else "None"
         output.append("Excluded TCP Ports: " + excl_tcp_port_scanlist_text)
 
         # UDP SCANNING
@@ -286,28 +279,19 @@ def service_discovery(file_path):
             output.append("UDP Scanning Method: Unknown")
 
         udp_port_scanlist = root.find(".//ServiceDiscovery/UDPPortScan/portList")
-        if udp_port_scanlist is not None and udp_port_scanlist.text:
-            udp_port_scanlist_text = udp_port_scanlist.text
-        else:
-            udp_port_scanlist_text = "None"
+        udp_port_scanlist_text = udp_port_scanlist.text if udp_port_scanlist is not None and udp_port_scanlist.text else "None"
         output.append("Additional UDP Ports: " + udp_port_scanlist_text)
         
         excluded_udp_ports = root.find(".//ServiceDiscovery/ExcludedUDPPortScan/portList")
-        if excluded_udp_ports is not None and excluded_udp_ports.text:
-            excluded_udp_ports_text =  excluded_udp_ports.text
-        else:
-            excluded_udp_ports_text = "None"
+        excluded_udp_ports_text = excluded_udp_ports.text if excluded_udp_ports is not None and excluded_udp_ports.text else "None"
         output.append("Excluded UDP Ports: " + excluded_udp_ports_text)
 
-        
         # Service names file
         output.append("")
         output.append("Service Names File: ")
         service_names_file = root.find(".//Plugin/param[@name='defaultServicePropertiesFile']")
-        if service_names_file is not None:
-            output.append(service_names_file.text)
-        else:
-            output.append("Unknown")
+        service_names_file_text = service_names_file.text if service_names_file is not None and service_names_file.text else "Unknown"
+        output.append(service_names_file_text)
 
         return '\n'.join(output)
     except Exception as e:
