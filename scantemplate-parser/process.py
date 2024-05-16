@@ -157,7 +157,7 @@ def asset_discovery(file_path):
             UDP_ports = root.find(".//CheckHosts/UDPHostCheck/portList")
             # Check if TCP_ports is empty
             if UDP_ports is not None and UDP_ports.text:
-                UDP_ports_text = udp_ports.text
+                UDP_ports_text = UDP_ports.text
             else:
                 UDP_ports_text = "None"
             output.append("The Following UDP ports are added to the inclusion list:" + UDP_ports_text)
