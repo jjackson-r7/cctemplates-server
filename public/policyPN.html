@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Policy F+/-</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="policyfalseScript.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>Policy False +/- Template</h2>
+
+    <!-- Text Fields -->
+    <div class="boxText"><textarea id="descriptionSI" cols="100" rows="10"></textarea><span>Description</span></div>
+    <div class="boxText"><textarea id="disputeProof" cols="100" rows="10"></textarea><span>Proof disputing results</span></div>
+    <div class="boxText"><textarea id="osinfo" cols="100" rows="3"></textarea><span>OS information</span></div>
+    <div class="boxText"><textarea id="Policy" cols="100" rows="1"></textarea><span>Benchmark</span></div>
+    <div class="boxText"><textarea id="Rules" cols="100" rows="1"></textarea><span>Rule(s)</span></div>
+    <div class="boxText"><textarea id="Auth" cols="100" rows="5"></textarea><span>Authentication</span></div>
+    <div class="boxText"><textarea id="applicable" cols="100" rows="5"></textarea><span>CPE Results</span></div>
+    <div class="boxText"><textarea id="systemfingerprint" cols="100" rows="5"></textarea><span>System Fingerprint (1.0)</span></div>
+    <div class="boxText"><textarea id="vulnfindings" cols="100" rows="5"></textarea><span>Vulnerability Finding (scan log)</span></div>
+    <div class="boxText"><textarea id="def" cols="100" rows="5"></textarea><span>DEF finding</span></div>
+    <div class="boxText"><textarea id="tst" cols="100" rows="3"></textarea><span>TST / OBJ finding</span></div>
+    <div class="boxText"><textarea id="item" cols="100" rows="3"></textarea><span>Item</span></div>
+    <div class="boxText"><textarea id="aces" cols="100" rows="3"></textarea><span>ACES</span></div>
+    <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="10"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <!-- Checkbox -->
+    <div class="checkbox-container">
+      <input type="checkbox" id="concheck">
+      <label for="concheck">Custom Policy</label>
+    </div>
+
+    <!-- Buttons -->
+    <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        <button onclick="resetForm()" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API / Integration Issue</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="apiIntegrationIssue.js" defer></script>
+  <style>
+    .selectWrapper label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #aaffaa;
+    }
+    .selectWrapper select {
+      width: 100%;
+      padding: 4px 6px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+  <div class="mainBody">
+    <h2>API / Integration Issue Template</h2>
+
+    <div class="boxText"><input type="text" id="dateReported" readonly /><span>Date Reported</span></div>
+    <div class="boxText"><input type="text" id="customerName" /><span>Customer Name (Optional)</span></div>
+    <div class="boxText"><input type="text" id="supportCase" /><span>Support Case # (Optional)</span></div>
+
+    <div class="boxText selectWrapper">
+      <label for="environment">Environment</label>
+      <select id="environment">
+        <option value="">Select</option>
+        <option>Production</option>
+        <option>Staging</option>
+        <option>Customer Sandbox</option>
+        <option>Internal Testing</option>
+      </select>
+    </div>
+
+    <div class="boxText"><textarea id="problemStatement" cols="100" rows="5"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="issueContext" cols="100" rows="5"></textarea><span>Issue Context</span></div>
+    <div class="boxText"><input type="text" id="integrationName" /><span>Integration / Tool Name</span></div>
+
+    <div class="boxText selectWrapper">
+      <label for="apiType">API Used</label>
+      <select id="apiType">
+        <option value="">Select</option>
+        <option>API v3</option>
+        <option>Integrations API</option>
+        <option>Both</option>
+      </select>
+    </div>
+
+    <div class="boxText"><textarea id="apiEndpoint" cols="100" rows="2"></textarea><span>Endpoint(s) Involved</span></div>
+
+    <div class="boxText selectWrapper">
+      <label for="authMethod">Auth Method</label>
+      <select id="authMethod">
+        <option value="">Select</option>
+        <option>API Key</option>
+        <option>OAuth Token</option>
+        <option>Platform Token</option>
+        <option>Basic Auth</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="boxText"><input type="text" id="tokenScope" /><span>Token Scope (if applicable)</span></div>
+    <div class="boxText"><textarea id="requestPayload" cols="100" rows="4"></textarea><span>Request Payload</span></div>
+    <div class="boxText"><textarea id="responseOutput" cols="100" rows="4"></textarea><span>Response / Error Output</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="3"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="3"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="actionsTaken" cols="100" rows="4"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="additionalEvidence" cols="100" rows="4"></textarea><span>Additional Evidence</span></div>
+    <div class="boxText"><textarea id="requestedOutcome" cols="100" rows="3"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button onclick="resetForm()" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+
+</html>

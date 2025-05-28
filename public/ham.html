@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="ccStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="dropDown">
+        <select name="jticket" id="jticket">
+          <option value="na">N/A</option>
+          <option value="yes">Yes</option>
+        </select>
+        <label for="jticket">Jira Ticket Needed?</label>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="guidance"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Provide Some Guidance</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="potentialSolutions"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Potential Solution(s)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="linkSolutions"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Link(s) to Solution(s)</span>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+      </div>
+    </div>
+    <script src="hamScript.js"></script>
+  </body>
+</html>
+

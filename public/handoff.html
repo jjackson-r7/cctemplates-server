@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="ccStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="dropDown">
+        <select name="region" id="region">
+          <option value="N/A"></option>
+          <option value="APAC">APAC</option>
+          <option value="EMEA">EMEA</option>
+          <option value="US">US</option>
+        </select>
+        <label for="region">Hand-off to:</label>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="issueSummary"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Issue</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="handoff"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Reason for Hand-off</span>
+      </div>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+      </div>
+    </div>
+    <script src="handoffScript.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>ccTemplates - Agent</title>
+    <script src="nav.js"></script>
+    <script src="dark-mode.js" defer></script>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <!-- Navigation menu will be loaded here -->
+    </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="darkModeToggle" />
+      <label for="darkModeToggle">
+        <div class="slider"></div>
+        <span>Dark Mode</span>
+      </label>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="orgID"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Org ID</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="agentID"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Agent ID</span>
+      </div>
+    </div>
+
+    <div class="buttonBody">
+      <section class="agentSection">
+        <div class="tooltip">
+          <button onclick="agentStatus()" onmouseout="outFunc()" class="agentbutton">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Agent Status
+          </button>
+        </div>
+        <div class="tooltip">
+          <button onclick="agentAssessment()" onmouseout="outFunc()" class="agentbutton">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Agent Assessment
+          </button>
+        </div>
+        <div class="tooltip">
+          <button onclick="agentLogs()" onmouseout="outFunc()" class="agentbutton">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Agent Logs
+          </button>
+        </div>
+        <div class="tooltip">
+          <button onclick="agentCollection()" onmouseout="outFunc()" class="agentbutton">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Collection Jobs
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script src="agentScript.js"></script>
+  </body>
+</html>
+

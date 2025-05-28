@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="internalNotes"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Notes</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="nextSteps"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Next Steps</span>
+      </div>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+      </div>
+    </div>
+    <script src="internalScript.js"></script>
+  </body>
+</html>
+

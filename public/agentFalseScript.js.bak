@@ -1,0 +1,55 @@
+"use strict";
+
+function myFunction() {
+  let agentFalse;
+
+  const orgID = document.getElementById("orgID");
+
+  const htmlOrgID = `*OrgID:* ` + orgID.value
+
+  const agentID = document.getElementById("agentID");
+
+  const htmlAgentID = `*AgentID:* `+ agentID.value
+
+  const region = document.getElementById("region");
+
+  const htmlRegion = `*Region:* ` + region.value
+
+  const xmlreport = document.getElementById("xmlreport");
+  const htmlXmlReport = `*Agent Assessment or XML Report Proof* {code:bgColor=#FCFCDF}` + xmlreport.value +  ` {code}`
+
+  const farnsworth = document.getElementById("farnsworth");
+  const htmlFarnsworth = `*Farnsworth* {code:bgColor=#FCFCDF}` + farnsworth.value +  ` {code}`
+
+  const disputeProof = document.getElementById("disputeProof");
+  const htmlDisputeProof = `*Proof of why it should be NON-VULNERABLE/VULNERABLE* {code:bgColor=#FCFCDF}` + disputeProof.value +  ` {code}`
+
+
+  agentFalse = `${htmlOrgID}
+  ${htmlAgentID}
+  ${htmlRegion}
+  ${htmlXmlReport}
+  ${htmlFarnsworth}
+  ${htmlDisputeProof}`
+
+  navigator.clipboard.writeText(agentFalse);
+
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="mainBody">
+      <!-- <button onclick="allText()">Demo</button> -->
+
+      <div class="boxText">
+        <textarea
+          id="attendees"
+          cols="100"
+          rows="4"
+          required="required"
+        ></textarea>
+        <span>Attendees</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="discussed"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>What Was Discussed?</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="outstanding"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Outstanding Issue(s)</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="custItems"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Customer - Actionable Items</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="rapid7Items"
+          cols="100"
+          rows="8"
+          required="required"
+        ></textarea>
+        <span>Rapid7 - Actionable Items</span>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+      </div>
+    </div>
+    <script src="callNotes.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="problemStatement"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Problem Statement</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="issueContext"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Issue Context</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="agentID"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Agent ID</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="ngavConfig"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Current Armor360/Armor Version, AV Health Status, and Prevention Group</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="agentLogs"
+          cols="100"
+          rows="2"
+          required="required"
+        ></textarea>
+        <span>Agent Logs (Attach in Jira)</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="supportFileGenerator"
+          cols="100"
+          rows="2"
+          required="required"
+        ></textarea>
+        <span>SupportFileGenerator Trace Logs</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="additionalEvidence"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Additional Evidence(Event logs, Procmon, config files, etc.)</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="actionsTakenToTroubleshoot"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Actions Taken to Troubleshoot</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="stepsToReproduce"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Steps to Reproduce</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="expectedBehavior"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Expected Behavior</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="actualBehavior"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Actual Behavior</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="requestedOutcomeFromEngineering"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Requested Outcome from Engineering</span>
+      </div>
+
+</div>
+      <br>
+      <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        </center>
+      </div>
+    </div>
+
+    <script src="NGAV.js"></script>
+  </body>
+</html>

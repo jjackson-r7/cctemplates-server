@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- This is an example document using orchestrator.html to explain the different components of an SEC tempalte page-->
+
+<!-- This section defines the properties of th page and also what css sheet it reads fromin this case otherStyles.css-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <link id="darkModeStylesheet" rel="stylesheet" href="" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+    <script src="dark-mode-toggle.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+
+  <!-- Button that is used to access nav menu -->
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <!-- This is the section for user inputs -->
+    <div class="mainBody">
+        <!-- This is the first text box users can input into -->
+      <div class="boxText">
+        <!-- text area has some importaint properties
+         id - This is the id for that text box, this is what you will reference in the related .js file to sue its input
+         cols - This is the width of the box, it should always be 100
+         rows - this is the height of the box, 10 is what the summary boxes use, I tend to use 5 for code snippets and 1 for single line inputs like orgID 
+         -->
+        <textarea
+          id="summarySI"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <!-- The span jsut defines the name the text box shows in the UI -->
+        <span>Summary</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="orgName"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Customer Orginisation Name</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="orgId"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Customer Orginisation ID</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="orgRegion"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Customer Orginisation Region</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="logSnippet"
+          cols="100"
+          rows="5"
+          required="required"
+        ></textarea>
+        <span>Log Snippet</span>
+      </div>
+
+
+      <!-- This is a new main body and the one used to define the check boxes-->
+      <div class="mainBody">
+        <h4 >Required Attachments</h4>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="logcheck">
+          <label for="logcheck">Orchestrator Logs attached</label>
+        </div>
+
+        <!-- Dark mode toggle switch -->
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <label for="darkModeToggle">
+            <div class="slider"></div>
+            <span style="color: #F8FAFA;">Dark Mode</span> <!-- Text Primary -->
+          </label>
+        </div>
+
+        <!-- This div is the box to copy text, don't make changes to this in your template pages -->
+</div>
+      <br>
+      <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        </center>
+      </div>
+    </div>
+
+    <!-- This is where you reference to the related .js script for the template -->
+    <script src="example.js"></script>
+  </body>
+</html>
+

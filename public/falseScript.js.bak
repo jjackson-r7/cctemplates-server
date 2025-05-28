@@ -1,0 +1,73 @@
+"use strict";
+
+function myFunction() {
+  let falsePositiveNegative;
+
+  const descriptionSI = document.getElementById("descriptionSI");
+
+  const hmtldescription = descriptionSI.value
+
+  const engineInfo = document.getElementById("engineInfo");
+
+  const htmlengine = `*Engine Info:* 
+  {code:bgColor=#b4ecfa}` +
+  engineInfo.value +` {code}`
+
+  const asset = document.getElementById("asset");
+
+  const htmlAsset = `*Asset:* ` + asset.value
+
+  const initAuth = document.getElementById("initAuth");
+  const htmlInitAuth = `*Initial Authentication achieved* {code:bgColor=#FCFCDF}` + initAuth.value + ` {code}`
+
+  const elevatedperm = document.getElementById("elevatedperm");
+  const htmlElevatedPerm = `*Permission Elevation achieved* {code:bgColor=#FCFCDF}` + elevatedperm.value + ` {code}`
+
+  const systemfingerprint = document.getElementById("systemfingerprint");
+  const htmlSystemF = `*System Fingerprint (Certainty=1.0) was achieved* {code:bgColor=#FCFCDF}` + systemfingerprint.value + ` {code}`
+
+  const vulnfindings = document.getElementById("vulnfindings");
+  const htmlVulnF = `*Vulnerability Finding (Scan Log)* {code:bgColor=#FCFCDF}` + vulnfindings.value + ` {code}`
+
+  const xmlreport = document.getElementById("xmlreport");
+  const htmlXmlReport = `*XML Report Proof* {code:bgColor=#FCFCDF}` + xmlreport.value +  ` {code}`
+
+  const farnsworth = document.getElementById("farnsworth");
+  const htmlFarnsworth = `*Farnsworth* {code:bgColor=#FCFCDF}` + farnsworth.value +  ` {code}`
+
+  const disputeProof = document.getElementById("disputeProof");
+  const htmlDisputeProof = `*Proof of why it should be NON-VULNERABLE/VULNERABLE* {code:bgColor=#FCFCDF}` + disputeProof.value +  ` {code}`
+
+
+  falsePositiveNegative = `${hmtldescription}
+  ${htmlengine}
+  ${htmlAsset}
+  ${htmlInitAuth}
+  ${htmlElevatedPerm}
+  ${htmlSystemF}
+  ${htmlVulnF}
+  ${htmlXmlReport}
+  ${htmlFarnsworth}
+  ${htmlDisputeProof}`
+
+  navigator.clipboard.writeText(falsePositiveNegative);
+
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Connection Issue</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="discovery.js" defer></script>
+</head>
+<body>
+
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>Discovery Connection Issue Template</h2>
+
+    <div class="boxText"><input type="text" id="dateReported" readonly /><span></span></div>
+    <div class="boxText"><textarea id="problemStatement" cols="100" rows="5"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="issueContext" cols="100" rows="5"></textarea><span>Issue Context</span></div>
+    <div class="boxText"><textarea id="connectionName" cols="100" rows="1"></textarea><span>Discovery Connection Name</span></div>
+    <div class="boxText"><textarea id="engineDetails" cols="100" rows="2"></textarea><span>Engine Name and UUID</span></div>
+    <div class="boxText"><textarea id="targetRange" cols="100" rows="2"></textarea><span>Target IP/Range/Subnet</span></div>
+    <div class="boxText"><textarea id="scanTemplate" cols="100" rows="2"></textarea><span>Scan Template Used</span></div>
+    <div class="boxText"><textarea id="connectionOutput" cols="100" rows="4"></textarea><span>Connection Test Output</span></div>
+    <div class="boxText"><textarea id="credentialDetails" cols="100" rows="2"></textarea><span>Credential Type and ID (if applicable)</span></div>
+    <div class="boxText"><textarea id="logsInfo" cols="100" rows="2"></textarea><span>Logs (Attach in Jira)</span></div>
+    <div class="boxText"><textarea id="additionalEvidence" cols="100" rows="4"></textarea><span>Additional Evidence (Configs, PCAPs, Screenshots)</span></div>
+    <div class="boxText"><textarea id="actionsTaken" cols="100" rows="5"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="3"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="3"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcome" cols="100" rows="3"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+
+</body>
+</html>
+

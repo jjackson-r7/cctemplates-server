@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InsightVM Console Reporting Issues</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="consoleReporting.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>InsightVM Console Reporting Issue Template</h2>
+
+    <div class="boxText"><input type="text" id="dateReported" readonly /><span></span></div>
+
+    <div class="boxText selectWrapper">
+      <label for="environment">Environment</label>
+      <select id="environment">
+        <option value="">Select</option>
+        <option>Production</option>
+        <option>Staging</option>
+        <option>Customer Sandbox</option>
+        <option>Internal Testing</option>
+      </select>
+    </div>
+
+    <div class="boxText selectWrapper">
+      <label for="reportType">Report Type</label>
+      <select id="reportType">
+        <option value="">Select</option>
+        <option>SQL</option>
+        <option>Custom Report</option>
+        <option>Built-in</option>
+      </select>
+    </div>
+
+    <div class="boxText selectWrapper">
+      <label for="errorCategory">Error Category</label>
+      <select id="errorCategory">
+        <option value="">Select</option>
+        <option>Report Generation Timeout</option>
+        <option>Missing Data</option>
+        <option>Incorrect Data</option>
+        <option>Report Crashes</option>
+      </select>
+    </div>
+
+    <div class="boxText"><textarea id="issueContext" cols="100" rows="5"></textarea><span>Issue Context</span></div>
+    <div class="boxText"><textarea id="errorLogs" cols="100" rows="3"></textarea><span>Error Logs (Attach in Jira)</span></div>
+    <div class="boxText"><textarea id="additionalDetails" cols="100" rows="3"></textarea><span>Additional Details (Steps, Screenshots, etc.)</span></div>
+    <div class="boxText"><textarea id="actionsTaken" cols="100" rows="4"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="3"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="3"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcome" cols="100" rows="3"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

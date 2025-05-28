@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #1d2b3a;
+}
+
+.mainBody {
+  display: flex;
+  align-items: center;
+  /* min-height: 100vh; */
+  flex-direction: column;
+  gap: 30px;
+  background: #1d2b3a;
+}
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+  background: #1d2b3a;
+} */
+
+.dropDown {
+  position: relative;
+  width: 500px;
+}
+.dropDown select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.dropDown label {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.dropDown select:valid ~ label,
+.dropDown select:focus ~ label {
+  color: #7bbe72;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #7bbe72;
+  border-right: 1px solid #7bbe72;
+  letter-spacing: 0.2em;
+}
+
+.dropDown select:valid ~ label,
+.dropDown select:focus ~ label {
+  background: #7bbe72;
+  color: #1d2b3a;
+  border-radius: 2px;
+}
+
+.dropDown select:valid,
+.dropDown select:focus {
+  border: 1px solid #7bbe72;
+}
+
+.boxText {
+  position: relative;
+  width: 500px;
+}
+
+.boxText textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.boxText span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.boxText textarea:valid ~ span,
+.boxText textarea:focus ~ span {
+  color: #7bbe72;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #7bbe72;
+  border-right: 1px solid #7bbe72;
+  letter-spacing: 0.2em;
+}
+
+.boxText:nth-child(3) textarea:valid ~ span,
+.boxText:nth-child(3) textarea:focus ~ span {
+  background: #7bbe72;
+  color: #1d2b3a;
+  border-radius: 2px;
+}
+
+.boxText textarea:valid,
+.boxText textarea:focus {
+  border: 1px solid #7bbe72;
+}
+
+.button {
+  position: relative;
+  background-color: #7bbe72; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #7bbe72;
+  color: black;
+  border: 2px solid #7bbe72;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  /* color: #f1f1f1; */
+  color: #7bbe72;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  /* color: white; */
+  color: #7bbe72;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  /* background-color: #444; */
+  background-color: #7bbe72;
+  color: black;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+  background: #1d2b3a;
+}
+
+.divider {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #d37231;
+  display: block;
+  transition: 0.3s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+

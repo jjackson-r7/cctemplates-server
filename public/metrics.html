@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Template Usage Metrics</title>
+  <link href="otherStyles.css" rel="stylesheet"/>
+  <script src="nav.js" defer></script>
+  <style>
+    .mainBody { max-width: 800px; margin: auto; padding: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin-top:1rem; }
+    th, td { text-align:left; padding: 0.5rem; border: 1px solid rgba(255,255,255,0.1); }
+    th { background: rgba(255,255,255,0.05); cursor: pointer; }
+    th:hover { background: rgba(255,255,255,0.1); }
+  </style>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main"><button class="openbtn" onclick="openNav()">☰</button></div>
+
+  <div class="mainBody">
+    <h2>Template Usage Metrics</h2>
+    <p>How many times each template’s “Copy Text” button has been clicked.</p>
+    <table id="metricsTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Template</th>
+          <th onclick="sortTable(1)">Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- populated by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    "use strict";
+
+    let metricsData = [];
+    let sortDirections = [true, true]; // ascending for both columns
+
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("/metrics")
+        .then(res => {
+          if (!res.ok) throw new Error("Network error");
+          return res.json();
+        })
+        .then(data => {
+          // Merge duplicate keys and sum their counts
+          const deduped = {};
+          for (const [key, value] of Object.entries(data)) {
+            deduped[key] = (deduped[key] || 0) + value;
+          }
+          metricsData = Object.entries(deduped);
+          renderTable(metricsData);
+        })
+        .catch(err => {
+          console.error("Failed to load metrics:", err);
+          document.querySelector("#metricsTable tbody").innerHTML =
+            `<tr><td colspan="2">Error loading metrics</td></tr>`;
+        });
+    });
+
+    function renderTable(data) {
+      const tbody = document.querySelector("#metricsTable tbody");
+      tbody.innerHTML = "";
+      data.forEach(([template, count]) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${template}</td><td>${count}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function sortTable(colIndex) {
+      const ascending = sortDirections[colIndex];
+      metricsData.sort((a, b) => {
+        return colIndex === 0
+          ? ascending ? a[0].localeCompare(b[0]) : b[0].localeCompare(a[0])
+          : ascending ? a[1] - b[1] : b[1] - a[1];
+      });
+      sortDirections[colIndex] = !ascending;
+      renderTable(metricsData);
+    }
+  </script>
+</body>
+</html>
+

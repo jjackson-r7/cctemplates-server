@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Troubleshooting Template</title>
+  <link href="otherStyles.css" rel="stylesheet" />
+  <script src="nav.js" defer></script>
+  <script src="IPL.js" defer></script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar"></div>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+</div>
+
+<div class="mainBody">
+  <h2>Insight Platform Login (IPL) Issue Template</h2>
+
+  <div class="boxText"><textarea id="orgID" cols="100" rows="3"></textarea><span>Org Information (ID + Region)</span></div>
+  <div class="boxText"><textarea id="email" cols="100" rows="1"></textarea><span>User's Email Address</span></div>
+  <div class="boxText"><textarea id="summary" cols="100" rows="10"></textarea><span>Problem Statement</span></div>
+  <div class="boxText"><textarea id="IPL" cols="100" rows="5"></textarea><span>Steps followed to enable IPL</span></div>
+  <div class="boxText"><textarea id="troubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
+  <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+  <div class="boxText"><textarea id="code" cols="100" rows="10"></textarea><span>HAR status code findings</span></div>
+  <div class="boxText"><textarea id="Kibana" cols="100" rows="3"></textarea><span>Kibana log findings</span></div>
+  <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+
+  <h4>Required Attachments</h4>
+  <div class="checkbox-container">
+    <input type="checkbox" id="orgchk"><label for="orgchk">ORG View Page Source HTML</label>
+    <input type="checkbox" id="harchk"><label for="harchk">Browser HAR File</label>
+    <input type="checkbox" id="consolechk"><label for="consolechk">Console Support Package</label>
+    <input type="checkbox" id="proofchk"><label for="proofchk">Screenshots of user profile</label>
+  </div>
+
+  <br>
+  <center>
+    <div class="tooltip">
+      <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+        Copy text
+      </button>
+      <button onclick="resetForm()" class="button">Reset</button>
+    </div>
+  </center>
+</div>
+
+</body>
+</html>
+

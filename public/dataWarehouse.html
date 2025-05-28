@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InsightVM Data Warehouse Issue Template</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="dataWarehouse.js" defer></script>
+  <style>
+    .selectWrapper {
+      width: 550px;
+      margin-bottom: 20px;
+    }
+
+    .selectWrapper label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #5d6d75;
+    }
+
+    .selectWrapper select {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid rgba(36, 43, 46, 0.3);
+      background: #fff;
+      color: #242B2E;
+    }
+  </style>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>InsightVM Data Warehouse Issue Template</h2>
+
+    <div class="boxText"><input type="text" id="dateReported" readonly /><span></span></div>
+    <div class="boxText"><textarea id="problemStatement" cols="100" rows="5"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="issueContext" cols="100" rows="5"></textarea><span>Issue Context</span></div>
+
+    <div class="selectWrapper">
+      <label for="environment">Environment</label>
+      <select id="environment">
+        <option value="">Select</option>
+        <option>Production</option>
+        <option>Staging</option>
+        <option>Customer Sandbox</option>
+        <option>Internal Testing</option>
+      </select>
+    </div>
+
+    <div class="selectWrapper">
+      <label for="version">PostgreSQL Version</label>
+      <select id="version">
+        <option value="">Select</option>
+        <option>13.x</option>
+        <option>14.x</option>
+        <option>15.x</option>
+        <option>16.x</option>
+      </select>
+    </div>
+
+    <div class="selectWrapper">
+      <label for="errorCategory">Error Category</label>
+      <select id="errorCategory">
+        <option value="">Select</option>
+        <option>Data Synchronization Issues</option>
+        <option>Query Timeout</option>
+        <option>Data Integrity Issues</option>
+        <option>Database Connection Issues</option>
+      </select>
+    </div>
+
+    <div class="boxText"><textarea id="logs" cols="100" rows="3"></textarea><span>Error Logs (Attach in Jira)</span></div>
+    <div class="boxText"><textarea id="additionalDetails" cols="100" rows="3"></textarea><span>Additional Details (Steps, Screenshots, etc.)</span></div>
+    <div class="boxText"><textarea id="requestedOutcome" cols="100" rows="3"></textarea><span>Requested Outcome from Engineering</span></div>
+    <div class="boxText"><textarea id="actionsTaken" cols="100" rows="4"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="3"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="3"></textarea><span>Actual Behavior</span></div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

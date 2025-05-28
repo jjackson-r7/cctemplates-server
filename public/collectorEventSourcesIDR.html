@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+ <div id="mySidebar" class="sidebar">
+    <!-- Navigation menu will be loaded here -->
+  </div>
+  <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="mainBody">
+      <div class="boxText">
+        <textarea
+          id="problemStatement"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Problem Statement</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="issueContext"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Issue Context</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="tobiasLink"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Tobias Link</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="eventSourceDocs"
+          cols="100"
+          rows="1"
+          required="required"
+        ></textarea>
+        <span>Event Source Documentation Link</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="collectorLogs"
+          cols="100"
+          rows="2"
+          required="required"
+        ></textarea>
+        <span>Collector Logs (Attach in Jira)</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="actionsTakenToTroubleshoot"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Actions Taken to Troubleshoot</span>
+      </div>
+      <div class="boxText">
+        <textarea
+          id="stepsToReproduce"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Steps to Reproduce</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="expectedBehavior"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Expected Behavior</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="actualBehavior"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Actual Behavior</span>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="requestedOutcomeFromEngineering"
+          cols="100"
+          rows="10"
+          required="required"
+        ></textarea>
+        <span>Requested Outcome from Engineering</span>
+      </div>
+
+</div>
+      <br>
+      <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        </center>
+      </div>
+    </div>
+
+    <script src="collectorIDR.js"></script>
+  </body>
+</html>

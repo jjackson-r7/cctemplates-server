@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent IDR Issue Template</title>
+  <link href="otherStyles.css" rel="stylesheet" />
+  <script src="nav.js" defer></script>
+  <script src="agentIDR.js" defer></script>
+  <style>
+    .selectWrapper label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #aaffaa;
+    }
+    .selectWrapper select {
+      width: 100%;
+      padding: 4px 6px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+    .boxText { margin-bottom: 20px; }
+    .boxText span { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>Agent (IDR) Issue Template</h2>
+
+    <!-- Date Reported -->
+    <div class="boxText">
+      <input type="text" id="dateReported" readonly />
+      <span>Date Reported</span>
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="boxText">
+      <textarea id="problemStatement" cols="100" rows="5"></textarea>
+      <span>Problem Statement</span>
+    </div>
+
+    <!-- Issue Context -->
+    <div class="boxText">
+      <textarea id="issueContext" cols="100" rows="5"></textarea>
+      <span>Issue Context</span>
+    </div>
+
+    <!-- Agent ID -->
+    <div class="boxText">
+      <input type="text" id="agentID" />
+      <span>Agent ID</span>
+    </div>
+
+    <!-- Agent Logs -->
+    <div class="boxText">
+      <textarea id="agentLogs" cols="100" rows="2"></textarea>
+      <span>Agent Logs (Attach in Jira)</span>
+    </div>
+
+    <!-- Additional Evidence -->
+    <div class="boxText">
+      <textarea id="additionalEvidence" cols="100" rows="5"></textarea>
+      <span>Additional Evidence (Event logs, Procmon, config files, etc.)</span>
+    </div>
+
+    <!-- Actions Taken -->
+    <div class="boxText">
+      <textarea id="actionsTakenToTroubleshoot" cols="100" rows="5"></textarea>
+      <span>Actions Taken to Troubleshoot</span>
+    </div>
+
+    <!-- Steps to Reproduce -->
+    <div class="boxText">
+      <textarea id="stepsToReproduce" cols="100" rows="5"></textarea>
+      <span>Steps to Reproduce</span>
+    </div>
+
+    <!-- Expected Behavior -->
+    <div class="boxText">
+      <textarea id="expectedBehavior" cols="100" rows="3"></textarea>
+      <span>Expected Behavior</span>
+    </div>
+
+    <!-- Actual Behavior -->
+    <div class="boxText">
+      <textarea id="actualBehavior" cols="100" rows="3"></textarea>
+      <span>Actual Behavior</span>
+    </div>
+
+    <!-- Requested Outcome -->
+    <div class="boxText">
+      <textarea id="requestedOutcomeFromEngineering" cols="100" rows="3"></textarea>
+      <span>Requested Outcome from Engineering</span>
+    </div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

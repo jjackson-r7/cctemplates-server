@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agent Policy Dispute Template</title>
+  <link href="otherStyles.css" rel="stylesheet"/>
+  <script src="nav.js" defer></script>
+  <script src="agentPolicy.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main"><button class="openbtn" onclick="openNav()">☰</button></div>
+
+  <div class="mainBody">
+    <h2>Agent Policy Dispute Template</h2>
+
+    <div class="boxText"><textarea id="descriptionSI" cols="100" rows="5"></textarea><span>Description</span></div>
+    <div class="boxText"><textarea id="orgName" cols="100" rows="1"></textarea><span>Customer Organisation Name</span></div>
+    <div class="boxText"><textarea id="orgId" cols="100" rows="1"></textarea><span>Customer Organisation ID</span></div>
+    <div class="boxText"><textarea id="orgRegion" cols="100" rows="1"></textarea><span>Customer Organisation Region</span></div>
+    <div class="boxText"><textarea id="agentId" cols="100" rows="1"></textarea><span>Agent ID</span></div>
+    <div class="boxText"><textarea id="disputeProof" cols="100" rows="5"></textarea><span>Proof disputing results</span></div>
+    <div class="boxText"><textarea id="osinfo" cols="100" rows="3"></textarea><span>OS Information</span></div>
+    <div class="boxText"><textarea id="Policy" cols="100" rows="1"></textarea><span>Benchmark</span></div>
+    <div class="boxText"><textarea id="Rules" cols="100" rows="1"></textarea><span>Rule(s)</span></div>
+    <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="5"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="5"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="5"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="5"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="concheck" />
+      <label for="concheck">Custom Policy</label>
+    </div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

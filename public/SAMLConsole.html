@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAML Console Issue</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="SAMLScript.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>SAML Console Issue Template</h2>
+
+    <div class="boxText"><textarea id="descriptionSI" cols="100" rows="10"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="responseinfo" cols="100" rows="10"></textarea><span>SAML Response Output</span></div>
+    <div class="boxText"><textarea id="authinfo" cols="100" rows="10"></textarea><span>SAML Debug Auth.log</span></div>
+    <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <div class="mainBody"><h4>Required Attachments</h4></div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="logchk"><label for="logchk">Console Support package with SAML debug enabled</label>
+      <input type="checkbox" id="responsechk"><label for="responsechk">SAML Response</label>
+      <input type="checkbox" id="proofchk"><label for="proofchk">Screenshots of IDP set up</label>
+    </div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button onclick="resetForm()" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
+

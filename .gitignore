@@ -1,0 +1,7 @@
+node_modules/
+metrics.db
+certificates/
+*.pem
+*.log
+.env
+.DS_Store
