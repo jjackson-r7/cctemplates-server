@@ -77,6 +77,7 @@ const server = https.createServer(sslOptions, (req, res) => {
   });
 });
 
-server.listen(3443, "localhost", () => {
-  console.log("✅ HTTPS server running on https://localhost:3443");
+server.listen(3443, "0.0.0.0", () => {
+  console.log("✅ HTTPS server running on https://0.0.0.0:3443");
 });
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Scanning Issues</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="ScanningGeneral.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main"><button class="openbtn" onclick="openNav()">☰</button></div>
+
+  <div class="mainBody">
+    <h2>General Scan Issue Template</h2>
+
+    <div class="boxText"><textarea id="summarySI" cols="100" rows="10"></textarea><span>Summary</span></div>
+    <div class="boxText"><textarea id="engineInfo" cols="100" rows="3"></textarea><span>Engine Info - Version from scan.log</span></div>
+    <div class="boxText"><textarea id="engineLog" cols="100" rows="5"></textarea><span>Engine Log findings</span></div>
+    <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="10"></textarea><span>Actual Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <div class="mainBody"><h4>Required Attachments</h4></div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="scanlogchk"><label for="scanlogchk">Scan Log with Enhanced Logging Enabled</label>
+      <input type="checkbox" id="Enginelogchk"><label for="xmlreportchk">Scan Engine Log Package Attached</label>
+      <input type="checkbox" id="proofchk"><label for="proofchk">Screenshots Attached</label>
+    </div>
+
+    <div class="tooltip">
+      <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+        Copy text
+      </button>
+      <button onclick="resetForm()" class="button">Reset</button>
+    </div>
+  </div>
+</body>
+</html>
+

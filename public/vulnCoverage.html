@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vulnerability Coverage Request</title>
+  <link rel="stylesheet" href="otherStyles.css" />
+  <script src="nav.js" defer></script>
+  <script src="vulnCoverage.js" defer></script>
+</head>
+<body>
+
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>Vulnerability Coverage Request Template</h2>
+
+    <div class="boxText"><input type="text" id="dateReported" readonly /><span></span></div>
+    <div class="boxText"><textarea id="summary" cols="100" rows="5"></textarea><span>Summary / High-level Overview</span></div>
+    <div class="boxText"><textarea id="cves" cols="100" rows="3"></textarea><span>CVE(s) Affected (list each on a new line)</span></div>
+    <div class="boxText"><textarea id="references" cols="100" rows="3"></textarea><span>References (NVD links, vendor advisories, etc.)</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="3"></textarea><span>Expected Behavior / Detection Request</span></div>
+    <div class="boxText"><textarea id="testingVerification" cols="100" rows="3"></textarea><span>Testing & Verification</span></div>
+    <div class="boxText"><textarea id="urgencyImpact" cols="100" rows="3"></textarea><span>Urgency / Business Impact</span></div>
+    <div class="boxText"><textarea id="attachments" cols="100" rows="2"></textarea><span>Attachments (logs, scans, screenshots - mention if included)</span></div>
+    <div class="boxText"><textarea id="actionItems" cols="100" rows="4"></textarea><span>Requested Action Items from Content PM</span></div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button id="copyButton" class="button" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+        <button id="resetButton" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+
+</body>
+</html>
