@@ -21,7 +21,7 @@ function myFunction() {
       (document.getElementById("scanlogchk").checked
         ? "**Scan Logs with enhanced logging is attached to the case**\n"
         : "**Scan Logs with enhanced logging is not attached to the case**\n") +
-      (document.getElementById("xmlreportchk").checked
+      (document.getElementById("Enginelogchk").checked
         ? "**Scan Engine Log Package is attached to the case**\n"
         : "**Scan Engine Log Package is not attached to the case**\n") +
       (document.getElementById("proofchk").checked
