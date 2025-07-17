@@ -19,7 +19,7 @@ function myFunction() {
       box("softwarefingerprint", "Software Fingerprint (If applicable)") +
       box("vulnfindings", "Vulnerability Finding (scan log)") +
       box("xmlreport", "XML Report Proof") +
-      box("farnsworth", "Farnsworth") +
+      box("Guenter", "Guenter") +
       box("jirasearch", "Jira/Internet Search Results") +
       box("actionsTakenToTroubleshoot", "Actions Taken to Troubleshoot") +
       box("expectedBehavior", "Expected Behavior") +

@@ -20,7 +20,7 @@ function myFunction() {
     field("summary", "Summary") +
     field("disputeProof", "Proof Disputing Finding") +
     field("xmlreport", "XML Report Proof") +
-    field("farnsworth", "Farnsworth") +
+    field("guenter", "Guenter") +
     field("actionsTakenToTroubleshoot", "Actions Taken to Troubleshoot") +
     field("expectedBehavior", "Expected Behavior") +
     field("actualBehavior", "Actual Behavior") +
