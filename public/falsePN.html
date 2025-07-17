@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>False Positive/Negative Scan Engine</title>
-  <link rel="stylesheet" href="otherStyles.css" />
-  <script src="nav.js" defer></script>
-  <script src="falseScript.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>False Positive/Negative Scan Engine</title>
+    <link rel="stylesheet" href="otherStyles.css" />
+    <script src="nav.js" defer></script>
+    <script src="falseScript.js" defer></script>
 </head>
 <body>
-  <div id="mySidebar" class="sidebar"></div>
-  <div id="main"><button class="openbtn" onclick="openNav()">☰</button></div>
+    <div id="mySidebar" class="sidebar"></div>
+    <div id="main"><button class="openbtn" onclick="openNav()">☰</button></div>
 
-  <div class="mainBody">
-    <h2>Scan Engine F+/- Issue Template</h2>
+    <div class="mainBody">
+        <h2>Scan Engine F+/- Issue Template</h2>
 
-    <div class="boxText"><textarea id="summarySI" cols="100" rows="10"></textarea><span>Summary</span></div>
-    <div class="boxText"><textarea id="disputeProof" cols="100" rows="10"></textarea><span>Proof of Non-Vulnerable / Vulnerable Status</span></div>
-    <div class="boxText"><textarea id="engineInfo" cols="100" rows="3"></textarea><span>Engine Info - Version from scan.log</span></div>
-    <div class="boxText"><textarea id="asset" cols="100" rows="1"></textarea><span>Asset Info</span></div>
-    <div class="boxText"><textarea id="systemfingerprint" cols="100" rows="5"></textarea><span>System Fingerprint (Certainty=1.0) was achieved</span></div>
-    <div class="boxText"><textarea id="elevatedperm" cols="100" rows="5"></textarea><span>Permission Elevation</span></div>
-    <div class="boxText"><textarea id="softwarefingerprint" cols="100" rows="5"></textarea><span>Software Fingerprint (When applicable)</span></div>
-    <div class="boxText"><textarea id="vulnfindings" cols="100" rows="5"></textarea><span>Vulnerability Finding (scan log)</span></div>
-    <div class="boxText"><textarea id="xmlreport" cols="100" rows="5"></textarea><span>XML Report Proof</span></div>
-    <div class="boxText"><textarea id="Guenter" cols="100" rows="3"></textarea><span>Guenter</span></div>
-    <div class="boxText"><textarea id="jirasearch" cols="100" rows="5"></textarea><span>Jira/Internet Search Results</span></div>
-    <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
-    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
-    <div class="boxText"><textarea id="actualBehavior" cols="100" rows="10"></textarea><span>Actual Behavior</span></div>
-    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+        <div class="boxText"><textarea id="summarySI" cols="100" rows="10"></textarea><span>Summary</span></div>
+        <div class="boxText"><textarea id="disputeProof" cols="100" rows="10"></textarea><span>Proof of Non-Vulnerable / Vulnerable Status</span></div>
+        <div class="boxText"><textarea id="engineInfo" cols="100" rows="3"></textarea><span>Engine Info - Version from scan.log</span></div>
+        <div class="boxText"><textarea id="asset" cols="100" rows="1"></textarea><span>Asset Info</span></div>
+        <div class="boxText"><textarea id="systemfingerprint" cols="100" rows="5"></textarea><span>System Fingerprint (Certainty=1.0) was achieved</span></div>
+        <div class="boxText"><textarea id="elevatedperm" cols="100" rows="5"></textarea><span>Permission Elevation</span></div>
+        <div class="boxText"><textarea id="softwarefingerprint" cols="100" rows="5"></textarea><span>Software Fingerprint (When applicable)</span></div>
+        <div class="boxText"><textarea id="vulnfindings" cols="100" rows="5"></textarea><span>Vulnerability Finding (scan log)</span></div>
+        <div class="boxText"><textarea id="xmlreport" cols="100" rows="5"></textarea><span>XML Report Proof</span></div>
+        <div class="boxText"><textarea id="Guenter" cols="100" rows="3"></textarea><span>Guenter</span></div>
+        <div class="boxText"><textarea id="jirasearch" cols="100" rows="5"></textarea><span>Jira/Internet Search Results</span></div>
+        <div class="boxText"><textarea id="actionsTakenToTroubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Troubleshoot</span></div>
+        <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+        <div class="boxText"><textarea id="actualBehavior" cols="100" rows="10"></textarea><span>Actual Behavior</span></div>
+        <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
 
-    <div class="mainBody"><h4>Required Attachments</h4></div>
-    <div class="checkbox-container">
-      <input type="checkbox" id="scanlogchk"><label for="scanlogchk">Scan Log with Enhanced Logging Enabled</label>
-      <input type="checkbox" id="xmlreportchk"><label for="xmlreportchk">XML Report Attached</label>
-      <input type="checkbox" id="proofchk"><label for="proofchk">Screenshot or Proof of F+/-</label>
+        <div class="mainBody"><h4>Required Attachments</h4></div>
+        <div class="checkbox-container">
+            <input type="checkbox" id="scanlogchk"><label for="scanlogchk">Scan Log with Enhanced Logging Enabled</label>
+            <input type="checkbox" id="xmlreportchk"><label for="xmlreportchk">XML Report Attached</label>
+            <input type="checkbox" id="proofchk"><label for="proofchk">Screenshot or Proof of F+/-</label>
+        </div>
+
+        <div class="tooltip">
+            <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                Copy text
+            </button>
+            <button onclick="resetForm()" class="button">Reset</button>
+        </div>
     </div>
-
-    <div class="tooltip">
-      <button onclick="myFunction()" onmouseout="outFunc()" class="button">
-        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-        Copy text
-      </button>
-      <button onclick="resetForm()" class="button">Reset</button>
-    </div>
-  </div>
+    <!-- Hidden div for copying rich text -->
+    <div id="hidden-copy-area" style="position: absolute; left: -9999px; top: 0; opacity: 0;"></div>
 </body>
 </html>
-
