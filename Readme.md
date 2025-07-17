@@ -1,8 +1,7 @@
----
+
 
 ## 📄 `README.md` – `cctemplates-server`
 
-```markdown
 # ccTemplates Server
 
 This project serves the `ccTemplates` web UI — a collection of pre-written technical response templates used internally at Rapid7 for efficient case handling and knowledge sharing.
@@ -10,7 +9,6 @@ This project serves the `ccTemplates` web UI — a collection of pre-written tec
 ## 📁 Project Structure
 
 ```
-
 cctemplates-server/
 ├── app.js                # HTTPS static + metrics server
 ├── public/               # All HTML, CSS, JS templates
@@ -19,8 +17,8 @@ cctemplates-server/
 ├── metrics.db            # SQLite DB for tracking template usage (not versioned)
 ├── certificates/         # SSL certs for HTTPS (not versioned)
 ├── .gitignore
+```
 
-````
 
 ## 🚀 Getting Started
 
