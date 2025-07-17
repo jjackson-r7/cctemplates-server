@@ -97,10 +97,3 @@ We recommend using a branching strategy:
 ## 📝 License
 
 Internal Rapid7 Use Only. Do not distribute outside the company.
-
-```
-
----
-
-Would you like this saved as a file (`README.md`) in your project folder too? Or want to include screenshots of the UI/metrics.html for clarity?
-```
