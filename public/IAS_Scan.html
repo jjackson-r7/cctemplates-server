@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IAS Stuck Scan</title>
+  <link href="otherStyles.css" rel="stylesheet" />
+  <script src="nav.js" defer></script>
+  <!-- Make sure to link to the updated spider.js file -->
+  <script src="IAS_Scan.js" defer></script>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>IAS Stuck Scan Template</h2>
+
+    <div class="boxText"><textarea id="orgID" cols="100" rows="3"></textarea><span>Org Information (ID + Region)</span></div>
+    <div class="boxText"><textarea id="summary" cols="100" rows="1"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="url" cols="100" rows="10"></textarea><span>Scan URL</span></div>
+    <div class="boxText"><textarea id="troubleshoot" cols="100" rows="10"></textarea><span>Actions Taken to Resolve</span></div>
+    <div class="boxText"><textarea id="expectedBehavior" cols="100" rows="10"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="10"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <h4>Required Attachments</h4>
+    <div class="checkbox-container">
+      <input type="checkbox" id="orgchk"><label for="orgchk">Org Info</label>
+      <input type="checkbox" id="scanchk"><label for="scanchk">Scan URL</label>
+    </div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        <button onclick="resetForm()" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+</body>
+</html>
