@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICS General Issue</title>
+  <link href="otherStyles.css" rel="stylesheet" />
+  <script src="nav.js" defer></script>
+  <script src="ICS.js" defer></script>
+  <style>
+    /* Style for the note box */
+    .note-box {
+      background-color: #f9f9f9;
+      border-left: 5px solid #ffcc00;
+      padding: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: red; /* Makes all text in the box red */
+    }
+    /* Basic styling for dropdowns to match textareas */
+    .boxText select {
+        padding: 5px;
+        font-family: inherit;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
+        width: 100%; /* Make select take full width of container */
+    }
+    /* Fix for checkbox alignment */
+    .checkbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Adds space between items */
+    }
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="mySidebar" class="sidebar"></div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <div class="mainBody">
+    <h2>ICS General Issue Template</h2>
+
+    <div class="note-box">
+      <strong>NOTE:</strong>
+      Please be aware Engineering does not have access to Salesforce, all customer shared data should be attached/added to the SI directly.
+    </div>
+
+    <div class="boxText">
+      <select id="Install">
+        <option value="" disabled selected>Select an Installation Type...</option>
+        <option value="SaaS">SaaS</option>
+        <option value="Self-Hosted">Self-Hosted</option>
+        <option value="FedRAMP">FedRAMP</option>
+      </select>
+    </div>
+
+    <div class="boxText">
+      <select id="Cloud">
+          <option value="" disabled selected>Select a Cloud Account Type...</option>
+          <option value="AWS">AWS</option>
+          <option value="Azure">Azure</option>
+          <option value="GCP">GCP</option>
+          <option value="AliCloud">AliCloud</option>
+          <option value="OCI">OCI</option>
+      </select>
+    </div>
+
+    <div class="boxText"><textarea id="Version" cols="100" rows="1"></textarea><span>Customer Version</span></div>
+    <div class="boxText"><textarea id="Org" cols="100" rows="5"></textarea><span>Customer ORG ID/ORG Name</span></div>
+    <div class="boxText"><textarea id="Occurred" cols="100" rows="1"></textarea><span>First Occurred Date</span></div>
+    <div class="boxText"><textarea id="Severity" cols="100" rows="3"></textarea><span>SI Priority Selection Context</span></div>
+    <div class="boxText"><textarea id="Summary" cols="100" rows="10"></textarea><span>Problem Statement</span></div>
+    <div class="boxText"><textarea id="Troubleshoot" cols="100" rows="5"></textarea><span>Troubleshooting Steps Followed</span></div>
+    <div class="boxText"><textarea id="Expected" cols="100" rows="5"></textarea><span>Expected Behavior</span></div>
+    <div class="boxText"><textarea id="Workaround" cols="10" rows="5"></textarea><span>Is there a workaround?</span></div>
+    <div class="boxText"><textarea id="Additional Links" cols="100" rows="3"></textarea><span>Additional Links</span></div>
+    <div class="boxText"><textarea id="requestedOutcomeFromEngineering" cols="100" rows="5"></textarea><span>Requested Outcome from Engineering</span></div>
+
+    <h4>Required Attachments</h4>
+    <div class="checkbox-container">
+      <div class="checkbox-item">
+        <input type="checkbox" id="logchk"><label for="logchk">Logs</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="screenchk"><label for="screenchk">Screenshots</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="harchk"><label for="harchk">HAR File</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="recordingchk"><label for="recordingchk">Recording Of Issue</label>
+      </div>
+    </div>
+
+    <br />
+    <center>
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy text
+        </button>
+        <button onclick="resetForm()" class="button">Reset</button>
+      </div>
+    </center>
+  </div>
+
+</body>
+</html>
