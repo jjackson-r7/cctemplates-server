@@ -1,0 +1,35 @@
+name: Email Notification on Push
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[cctemplates-server] New push to ${{ github.ref_name }} by ${{ github.actor }}"
+          to: ${{ secrets.NOTIFY_EMAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            A new push was made to the cctemplates-server repository.
+
+            Repository: ${{ github.repository }}
+            Branch:     ${{ github.ref_name }}
+            Pushed by:  ${{ github.actor }}
+            Commit SHA: ${{ github.sha }}
+
+            View the changes:
+            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
+            Compare:
+            ${{ github.event.compare }}

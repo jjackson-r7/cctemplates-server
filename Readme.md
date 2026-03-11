@@ -87,6 +87,22 @@ We recommend using a branching strategy:
 
 ---
 
+## 🔔 Email Notifications
+
+This repo uses a GitHub Actions workflow to send an email whenever code is pushed to any branch. To enable it, add the following secrets in the repository's **Settings → Secrets and variables → Actions**:
+
+| Secret name       | Description                                      |
+|-------------------|--------------------------------------------------|
+| `MAIL_SERVER`     | SMTP server hostname (e.g. `smtp.gmail.com`)     |
+| `MAIL_PORT`       | SMTP port (e.g. `465` for SSL, `587` for TLS)   |
+| `MAIL_USERNAME`   | SMTP login / sender email address                |
+| `MAIL_PASSWORD`   | SMTP password or app-specific password           |
+| `NOTIFY_EMAIL_TO` | Recipient email address(es), comma-separated     |
+
+Once the secrets are configured, every push to any branch will trigger the workflow and send an email with the commit details and a link to the diff.
+
+---
+
 ## 🙋 Maintainers
 
 * jjackson-r7
