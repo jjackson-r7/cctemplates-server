@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>3rd Party Integrations</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <!-- Navigation menu will be loaded here -->
+    </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="mainBody">
+      <h2 style="color: #E85E26; margin-top: 20px;">Integrations with 3rd Party Applications</h2>
+      <ul style="color: #5d6d75; margin-bottom: 10px; font-size: 1em; list-style: disc; padding-left: 20px;">
+        <li>Connectors in Attack Surface Management</li>
+        <li>Event Sources in SIEM</li>
+        <li>Plugins in ICON</li>
+      </ul>
+
+      <div class="boxText">
+        <textarea
+          id="businessUseCase"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Business Use-Case</span>
+        <div class="info-icon">?<div class="info-tip">What is the customer's business use-case?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="currentImpact"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Impact on Customer</span>
+        <div class="info-icon">?<div class="info-tip">What impact is the current functionality having on the customer?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="newOrEnhancement"
+          cols="100"
+          rows="4"
+          required="required"
+        ></textarea>
+        <span>New or Enhancement?</span>
+        <div class="info-icon">?<div class="info-tip">Is this a new integration, or an enhancement to an existing integration?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="productTool"
+          cols="100"
+          rows="4"
+          required="required"
+        ></textarea>
+        <span>Product / Tool</span>
+        <div class="info-icon">?<div class="info-tip">Please state the product / tool in question</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="thirdPartyDocs"
+          cols="100"
+          rows="4"
+          required="required"
+        ></textarea>
+        <span>3rd Party Documentation</span>
+        <div class="info-icon">?<div class="info-tip">Please link any third party documentation / resources relevant to the desired integration</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="specificFunctionality"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Desired Functionality</span>
+        <div class="info-icon">?<div class="info-tip">Please state the specific functionality that this integration should bring between Rapid7 and the 3rd Party Tool</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="eventSourceLogs"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Event Source Log Data (SIEM Event Source Requests)</span>
+        <div class="info-icon">?<div class="info-tip">Please have the customer share log data as a custom log in SIEM, or extract this directly from the source</div></div>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+      </div>
+    </div>
+    <script src="integrations.js"></script>
+  </body>
+</html>

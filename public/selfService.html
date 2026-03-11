@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="otherStyles.css" rel="stylesheet" />
+    <title>Customer Self-Service</title>
+    <script src="nav.js"></script>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <!-- Navigation menu will be loaded here -->
+    </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="mainBody">
+      <h2 style="color: #E85E26; margin-top: 20px;">Customer Self‑Service</h2>
+      <ul style="color: #5d6d75; margin-bottom: 10px; font-size: 1em; list-style: disc; padding-left: 20px;">
+        <li>Ability for the customer to carry out actions that currently go through support</li>
+        <li>A previous example could be, license management (now Subscription Management)</li>
+        <li>A current example could be Agent Mutations, which have to go through Rapid7 Support but many customers request the ability to self-serve this</li>
+      </ul>
+
+      <div class="boxText">
+        <textarea
+          id="businessUseCase"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Business Use-Case</span>
+        <div class="info-icon">?<div class="info-tip">What is the business use-case?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="currentImpact"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Impact on Business</span>
+        <div class="info-icon">?<div class="info-tip">What impact is the current functionality having on the business?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="existingOrNew"
+          cols="100"
+          rows="4"
+          required="required"
+        ></textarea>
+        <span>Existing or New?</span>
+        <div class="info-icon">?<div class="info-tip">Is this an Existing Self-Service Functionality, or a New Self-Service Functionality?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="existingEnhancement"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>Existing Enhancement</span>
+        <div class="info-icon">?<div class="info-tip">If Existing, how can this be enhanced to provide the customer additional functionality?</div></div>
+      </div>
+
+      <div class="boxText">
+        <textarea
+          id="newFunctionality"
+          cols="100"
+          rows="6"
+          required="required"
+        ></textarea>
+        <span>New Functionality</span>
+        <div class="info-icon">?<div class="info-tip">If New, describe the functionality that the customer wishes to self-serve rather than do via Rapid7</div></div>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="myFunction()" onmouseout="outFunc()" class="button">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Text
+        </button>
+      </div>
+    </div>
+    <script src="selfService.js"></script>
+  </body>
+</html>
