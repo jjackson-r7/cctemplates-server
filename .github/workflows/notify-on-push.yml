@@ -1,12 +1,19 @@
-name: Email Notification on Push
+name: Email Notification on Changes
 
 on:
   push:
     branches:
       - '**'
+  pull_request:
+    types: [opened, closed, reopened, synchronize]
+  issues:
+    types: [opened, closed, reopened]
+  issue_comment:
+    types: [created]
 
 jobs:
-  notify:
+  notify-push:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions: {}
     steps:
@@ -17,7 +24,7 @@ jobs:
           server_port: ${{ secrets.MAIL_PORT }}
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "[cctemplates-server] New push to ${{ github.ref_name }} by ${{ github.actor }}"
+          subject: "[cctemplates-server] Push to ${{ github.ref_name }} by ${{ github.actor }}"
           to: ${{ secrets.NOTIFY_EMAIL_TO }}
           from: ${{ secrets.MAIL_USERNAME }}
           body: |
@@ -33,3 +40,81 @@ jobs:
 
             Compare:
             ${{ github.event.compare }}
+
+  notify-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[cctemplates-server] PR #${{ github.event.pull_request.number }} ${{ github.event.action }} by ${{ github.actor }}"
+          to: ${{ secrets.NOTIFY_EMAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            Pull Request activity in cctemplates-server.
+
+            Action:  ${{ github.event.action }}
+            PR:      #${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }}
+            Author:  ${{ github.event.pull_request.user.login }}
+            Branch:  ${{ github.event.pull_request.head.ref }} -> ${{ github.event.pull_request.base.ref }}
+
+            View the PR:
+            ${{ github.event.pull_request.html_url }}
+
+  notify-issue:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[cctemplates-server] Issue #${{ github.event.issue.number }} ${{ github.event.action }} by ${{ github.actor }}"
+          to: ${{ secrets.NOTIFY_EMAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            Issue activity in cctemplates-server.
+
+            Action:  ${{ github.event.action }}
+            Issue:   #${{ github.event.issue.number }} - ${{ github.event.issue.title }}
+            Author:  ${{ github.event.issue.user.login }}
+
+            View the issue:
+            ${{ github.event.issue.html_url }}
+
+  notify-comment:
+    if: github.event_name == 'issue_comment'
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[cctemplates-server] New comment on #${{ github.event.issue.number }} by ${{ github.actor }}"
+          to: ${{ secrets.NOTIFY_EMAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            New comment in cctemplates-server.
+
+            On:      #${{ github.event.issue.number }} - ${{ github.event.issue.title }}
+            By:      ${{ github.event.comment.user.login }}
+
+            Comment:
+            ${{ github.event.comment.body }}
+
+            View the comment:
+            ${{ github.event.comment.html_url }}
