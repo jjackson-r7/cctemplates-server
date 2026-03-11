@@ -1,5 +1,3 @@
-
-
 ## 📄 `README.md` – `cctemplates-server`
 
 # ccTemplates Server
@@ -42,16 +40,14 @@ node app.js
 
 ## 🧠 Metrics System
 
-* When a template’s "Copy Text" button is clicked, a POST request is sent to:
+* When a template's "Copy Text" button is clicked, a POST request is sent to:
 
-  ```
-  /increment/templateName
+  ```${url}/increment/templateName
   ```
 * This increments the count in a local SQLite DB (`metrics.db`).
 * Metrics can be viewed at:
 
-  ```
-  https://<server>/metrics.html
+  ```${url}/metrics.html
   ```
 
 ---
@@ -77,7 +73,7 @@ pm2 restart app
 
 ---
 
-## ��️ Development Workflow
+## 🛠️ Development Workflow
 
 We recommend using a branching strategy:
 
