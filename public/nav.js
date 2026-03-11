@@ -5,32 +5,73 @@ function loadNav() {
     .then(html => {
       const sidebar = document.getElementById('mySidebar');
       sidebar.innerHTML = html;
-      sidebar.style.width = '0'; // Ensure it's collapsed on load
-      addDropdownFunctionality();
+
+      // Restore sidebar state from localStorage
+      if (localStorage.getItem('sidebarOpen') === 'true') {
+        sidebar.style.width = '250px';
+        document.getElementById('main').style.marginLeft = '250px';
+
+        // Restore open dropdowns
+        try {
+          const openDropdowns = JSON.parse(localStorage.getItem('openDropdowns') || '[]');
+          openDropdowns.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'block';
+          });
+        } catch (e) {}
+
+        // Restore scroll position
+        const savedScroll = localStorage.getItem('sidebarScroll');
+        if (savedScroll) {
+          setTimeout(() => { sidebar.scrollTop = parseInt(savedScroll, 10); }, 50);
+        }
+      } else {
+        sidebar.style.width = '0';
+      }
+
+      // Save scroll position on every scroll
+      sidebar.addEventListener('scroll', () => {
+        localStorage.setItem('sidebarScroll', sidebar.scrollTop);
+      });
     })
     .catch(error => console.error('Error loading navigation:', error));
 }
 
-// Dropdown toggle
-function addDropdownFunctionality() {
-  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function () {
-      const dropdownContent = this.nextElementSibling;
-      if (dropdownContent && dropdownContent.classList.contains('dropdown-container')) {
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-      }
-    });
-  });
+// Dropdown toggle by id (used by onclick in navigation.html)
+function toggleDropdown(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const isOpening = el.style.display !== 'block';
+    el.style.display = isOpening ? 'block' : 'none';
+    if (isOpening) {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
+    // Save which dropdowns are open
+    saveOpenDropdowns();
+  }
 }
 
-// Open/close
+// Save the IDs of all currently open dropdowns
+function saveOpenDropdowns() {
+  const open = [];
+  document.querySelectorAll('.dropdown-container').forEach(el => {
+    if (el.style.display === 'block' && el.id) {
+      open.push(el.id);
+    }
+  });
+  localStorage.setItem('openDropdowns', JSON.stringify(open));
+}
+
+// Open/close with localStorage persistence
 function openNav() {
   document.getElementById('mySidebar').style.width = '250px';
   document.getElementById('main').style.marginLeft = '250px';
+  localStorage.setItem('sidebarOpen', 'true');
 }
 function closeNav() {
   document.getElementById('mySidebar').style.width = '0';
   document.getElementById('main').style.marginLeft = '0';
+  localStorage.setItem('sidebarOpen', 'false');
 }
 
 document.addEventListener('DOMContentLoaded', loadNav);
