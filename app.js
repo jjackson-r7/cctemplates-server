@@ -59,6 +59,35 @@ const server = https.createServer(sslOptions, (req, res) => {
     return;
   }
 
+  // Serve scantemplate-parser directory
+  if (pathname === "/scantemplate" || pathname === "/scantemplate/") {
+    const scanIndexPath = path.join(__dirname, "scantemplate-parser", "index.html");
+    fs.readFile(scanIndexPath, (err, content) => {
+      if (err) {
+        res.writeHead(404);
+        res.end("404 Not Found");
+      } else {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(content);
+      }
+    });
+    return;
+  }
+
+  if (pathname.startsWith("/scantemplate/")) {
+    const subPath = pathname.replace(/^\/scantemplate\//, "");
+    const scanFullPath = path.join(__dirname, "scantemplate-parser", subPath);
+    fs.readFile(scanFullPath, (err, content) => {
+      if (err) {
+        res.writeHead(404);
+        res.end("404 Not Found");
+      } else {
+        res.writeHead(200, { "Content-Type": lookup(subPath) || "application/octet-stream" });
+        res.end(content);
+      }
+    });
+    return;
+  }
   // Static file handler
   let filePath = pathname.replace(/^\/+|\/+$/g, "") || "index.html";
   const fullPath = path.join(__dirname, "public", filePath);
