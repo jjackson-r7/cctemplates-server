@@ -23,7 +23,8 @@ function myFunction() {
       field("expectedBehavior", "Expected Behavior") +
       field("actualBehavior", "Actual Behavior") +
       field("requestedOutcomeFromEngineering", "Requested Outcome from Engineering") +
-      `\n${document.getElementById("concheck").checked ? "**Custom Policy**" : "**Built-in Policy**"}`;
+      `\n${document.getElementById("concheck").checked ? "**Custom Policy**" : "**Built-in Policy**"}`
+      `\n${document.getElementById("s3check").checked ? "**PolicyData S3 Files**" : "**PolicyData S3 Files**"}`;
 
     navigator.clipboard.writeText(output).then(() => {
       alert("Copied to clipboard. Ready to paste in Jira.");
